@@ -1,0 +1,31 @@
+<div class='customSwiperWrapper'>
+	<swiper
+		[config]='config'
+		class='customSwiper'
+	>
+		<ng-template swiperSlide>
+			<app-banner
+				title='Сделаем мир чище'
+				text='Сдай макулатуру или старую одежду и получи скидку на покупку товаров из переработанных материалов'
+				btnText='Условия сервиса'
+				bgColor='#B3EDC8'
+				bgImg='./assets/images/recycling.svg'></app-banner>
+		</ng-template>
+		<ng-template swiperSlide>
+			<app-banner
+				title='А вы знали...'
+				text='что среднее время разложения пластмассовых изделий колеблется  от 400 до 700 лет,  а полиэтиленовых пакетов — от 100 до 200 лет? '
+				btnText='Узнать больше'
+				bgColor='#FFE48F'
+				bgImg='./assets/images/flowers.svg'></app-banner>
+		</ng-template>
+		<ng-template swiperSlide>
+			<app-banner
+				title='Что с масками?'
+				text="Медицинские маски не обязательно должны становиться отходами. Их тоже можно сдать на переработку."
+				btnText='Пункты сбора масок'
+				bgColor='#BFF0DE'
+				bgImg='./assets/images/masks.svg'></app-banner>
+		</ng-template>
+	</swiper>
+</div>
