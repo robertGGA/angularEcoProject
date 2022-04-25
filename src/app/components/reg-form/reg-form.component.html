@@ -1,0 +1,39 @@
+<p>login-form works!</p>
+<div class='modal__container'>
+	<div class='modal__firstRow'>
+		<h2>title</h2>
+		<button class='modal__closeButton'>X</button>
+	</div>
+	<form
+		[formGroup]='formGroup'>
+		<input
+			formControlName='phone'
+			class='formInput'
+			[class.errorFormInput]='isControlValid("phone")'
+			placeholder='Телефон'>
+		<ng-container *ngIf='validateControl("phone","required")'>
+			<app-form-error-message validationMessage='Это поле обязательно'></app-form-error-message>
+		</ng-container>
+		<ng-container *ngIf='validateControl("phone","maxlength")'>
+			<app-form-error-message validationMessage='Максимальная длина превышена'></app-form-error-message>
+		</ng-container>
+		<input
+			formControlName='password'
+			class='formInput'
+			[class.errorFormInput]='isControlValid("password")'
+			placeholder='Пароль'
+			type='password'>
+		<ng-container *ngIf='validateControl("password","required")'>
+			<app-form-error-message validationMessage="Это поле обязательно"></app-form-error-message>
+		</ng-container>
+		<ng-container *ngIf='validateControl("password","maxlength")'>
+			<app-form-error-message validationMessage="Максимальная длина превышена"></app-form-error-message>
+		</ng-container>
+		<app-button
+			[isLarge]='true'
+			[isPrimary]='true'
+			[submitFunc]='onSubmit("phone","password")'
+			value='Вход'></app-button>
+	</form>
+</div>
+
