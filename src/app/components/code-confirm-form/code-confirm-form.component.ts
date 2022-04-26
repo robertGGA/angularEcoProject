@@ -2,12 +2,12 @@ import { Component, OnInit, ChangeDetectionStrategy, Output, EventEmitter } from
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
-  selector: 'app-reg-form',
-  templateUrl: './reg-form.component.html',
-  styleUrls: ['./reg-form.component.sass'],
+  selector: 'app-code-confirm-form',
+  templateUrl: './code-confirm-form.component.html',
+  styleUrls: ['./code-confirm-form.component.sass'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class RegFormComponent{
+export class CodeConfirmFormComponent {
 
 	formGroup: FormGroup;
 	@Output() closeModal: EventEmitter<any> = new EventEmitter<any>();
@@ -16,9 +16,10 @@ export class RegFormComponent{
 		private formBuilder: FormBuilder
 	) {
 		this.formGroup = this.formBuilder.group({
-			phone: ['', [
+			code: ['', [
 				Validators.required,
 				Validators.maxLength(11)]]
+
 		})
 	}
 

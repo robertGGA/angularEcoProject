@@ -2,13 +2,12 @@ import { Component, OnInit, ChangeDetectionStrategy, Output, EventEmitter } from
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
-  selector: 'app-reg-form',
-  templateUrl: './reg-form.component.html',
-  styleUrls: ['./reg-form.component.sass'],
+  selector: 'app-login-email-form',
+  templateUrl: './login-email-form.component.html',
+  styleUrls: ['./login-email-form.component.sass'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class RegFormComponent{
-
+export class LoginEmailFormComponent{
 	formGroup: FormGroup;
 	@Output() closeModal: EventEmitter<any> = new EventEmitter<any>();
 
@@ -16,9 +15,12 @@ export class RegFormComponent{
 		private formBuilder: FormBuilder
 	) {
 		this.formGroup = this.formBuilder.group({
-			phone: ['', [
+			email: ['', [
 				Validators.required,
-				Validators.maxLength(11)]]
+				Validators.maxLength(64),
+				Validators.email]],
+			password: ['', [Validators.required,
+				Validators.maxLength(16)]]
 		})
 	}
 
@@ -41,5 +43,4 @@ export class RegFormComponent{
 			console.log(phone,password)
 		}
 	}
-
 }

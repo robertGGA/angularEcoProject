@@ -1,24 +1,26 @@
 <p>login-form works!</p>
 <div class='modal__container'>
-
 	<div class='modal__firstRow'>
-		<h2 class='title'>Вход или регистрация</h2>
+		<h2 class='title'>Ввести код</h2>
 		<button class='modal__closeButton'
 		        (click)='closeModal.emit()'>X
 		</button>
 	</div>
-
+	<div class='codeModal__phone_number_container'>
+		<p>Введите код отправленный вам на телефон</p>
+		<p class='codeModal__phone_number'>+7 (917) 888 88 88</p>
+	</div>
 	<form
 		[formGroup]='formGroup'>
 		<input
-			formControlName='phone'
+			formControlName='code'
 			class='formInput'
-			[class.errorFormInput]='isControlValid("phone")'
-			placeholder='Телефон'>
-		<ng-container *ngIf='validateControl("phone","required")'>
+			[class.errorFormInput]='isControlValid("code")'
+			placeholder='Код'>
+		<ng-container *ngIf='validateControl("code","required")'>
 			<app-form-error-message validationMessage='Это поле обязательно'></app-form-error-message>
 		</ng-container>
-		<ng-container *ngIf='validateControl("phone","maxlength")'>
+		<ng-container *ngIf='validateControl("code","maxlength")'>
 			<app-form-error-message validationMessage='Максимальная длина превышена'></app-form-error-message>
 		</ng-container>
 		<div class='loginBtn'>
@@ -26,11 +28,11 @@
 				[isLarge]='true'
 				[isPrimary]='true'
 				[submitFunc]='onSubmit("phone","password")'
-				value='Вход'></app-button>
+				value='Отправить'></app-button>
 		</div>
 		<div class='modal__underLinks'>
 			<button>
-				Я уже зарегестрировался(-ась)
+				Не получил(-а) код
 			</button>
 		</div>
 		<div class='loginBtn'>

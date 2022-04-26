@@ -16,6 +16,9 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { FormErrorMessageComponent } from './components/ui/form-error-message/form-error-message.component';
 import { ButtonComponent } from './components/ui/button/button.component';
 import { OverlayModule } from '@angular/cdk/overlay';
+import { CodeConfirmFormComponent } from './components/code-confirm-form/code-confirm-form.component';
+import { LoginEmailFormComponent } from './components/login-email-form/login-email-form.component';
+import { PartnersLoginFromComponent } from './components/partners-login-from/partners-login-from.component';
 
 @NgModule({
 	declarations: [
@@ -29,6 +32,9 @@ import { OverlayModule } from '@angular/cdk/overlay';
 		RegFormComponent,
   FormErrorMessageComponent,
   ButtonComponent,
+  CodeConfirmFormComponent,
+  LoginEmailFormComponent,
+  PartnersLoginFromComponent,
 	],
 	imports: [
 		SwiperModule,

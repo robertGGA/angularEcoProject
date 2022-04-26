@@ -8,14 +8,17 @@
 	<form
 		[formGroup]='formGroup'>
 		<input
-			formControlName='phone'
+			formControlName='email'
 			class='formInput'
-			[class.errorFormInput]='isControlValid("phone")'
-			placeholder='Телефон'>
-		<ng-container *ngIf='validateControl("phone","required")'>
+			[class.errorFormInput]='isControlValid("email")'
+			placeholder='Email'>
+		<ng-container *ngIf='validateControl("email","required")'>
 			<app-form-error-message validationMessage='Это поле обязательно'></app-form-error-message>
 		</ng-container>
-		<ng-container *ngIf='validateControl("phone","maxlength")'>
+		<ng-container *ngIf='validateControl("email","email")'>
+			<app-form-error-message validationMessage='Неправильный формат почты'></app-form-error-message>
+		</ng-container>
+		<ng-container *ngIf='validateControl("email","maxlength")'>
 			<app-form-error-message validationMessage='Максимальная длина превышена'></app-form-error-message>
 		</ng-container>
 		<input

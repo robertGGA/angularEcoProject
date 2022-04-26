@@ -8,14 +8,28 @@
 	<form
 		[formGroup]='formGroup'>
 		<input
-			formControlName='phone'
+			formControlName='email'
 			class='formInput'
-			[class.errorFormInput]='isControlValid("phone")'
-			placeholder='Телефон'>
-		<ng-container *ngIf='validateControl("phone","required")'>
+			[class.errorFormInput]='isControlValid("name")'
+			placeholder='Наименование организации'>
+		<ng-container *ngIf='validateControl("name","required")'>
 			<app-form-error-message validationMessage='Это поле обязательно'></app-form-error-message>
 		</ng-container>
-		<ng-container *ngIf='validateControl("phone","maxlength")'>
+		<ng-container *ngIf='validateControl("name","maxlength")'>
+			<app-form-error-message validationMessage='Максимальная длина превышена'></app-form-error-message>
+		</ng-container>
+		<input
+			formControlName='email'
+			class='formInput'
+			[class.errorFormInput]='isControlValid("email")'
+			placeholder='Email'>
+		<ng-container *ngIf='validateControl("email","required")'>
+			<app-form-error-message validationMessage='Это поле обязательно'></app-form-error-message>
+		</ng-container>
+		<ng-container *ngIf='validateControl("email","email")'>
+			<app-form-error-message validationMessage='Неправильный формат почты'></app-form-error-message>
+		</ng-container>
+		<ng-container *ngIf='validateControl("email","maxlength")'>
 			<app-form-error-message validationMessage='Максимальная длина превышена'></app-form-error-message>
 		</ng-container>
 		<input
@@ -35,14 +49,11 @@
 				[isLarge]='true'
 				[isPrimary]='true'
 				[submitFunc]='onSubmit("phone","password")'
-				value='Вход'></app-button>
+				value='Получить код'></app-button>
 		</div>
 		<div class='modal__underLinks'>
 			<button>
-				Войти с помощью смс
-			</button>
-			<button>
-				Регистрация
+				Я уже зарегистировался(-ась)
 			</button>
 		</div>
 		<div class='loginBtn'>
