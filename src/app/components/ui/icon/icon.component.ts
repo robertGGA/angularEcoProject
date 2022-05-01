@@ -11,5 +11,6 @@ export class IconComponent {
 	height!: number
 
   constructor() {
+
   }
 }
