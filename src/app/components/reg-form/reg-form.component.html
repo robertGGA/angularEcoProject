@@ -1,13 +1,3 @@
-<p>login-form works!</p>
-<div class='modal__container'>
-
-	<div class='modal__firstRow'>
-		<h2 class='title'>Вход или регистрация</h2>
-		<button class='modal__closeButton'
-		        (click)='closeModal.emit()'>X
-		</button>
-	</div>
-
 	<form
 		[formGroup]='formGroup'>
 		<input
@@ -29,11 +19,11 @@
 				value='Вход'></app-button>
 		</div>
 		<div class='modal__underLinks'>
-			<button>
+			<button (click)='this.dialog.openLoginDialog()'>
 				Я уже зарегестрировался(-ась)
 			</button>
 		</div>
-		<div class='loginBtn'>
+		<div class='loginBtn' (click)='this.dialog.openPartnersLoginDialog()'>
 			<app-button
 				value='Вход для партнёров'
 				[isLarge]='true'
@@ -42,5 +32,3 @@
 			</app-button>
 		</div>
 	</form>
-</div>
-

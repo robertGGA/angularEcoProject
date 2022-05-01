@@ -1,5 +1,10 @@
 import { Component, OnInit, ChangeDetectionStrategy, Output, EventEmitter } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { CodeConfirmFormComponent } from '@components/code-confirm-form/code-confirm-form.component';
+import { DialogRef } from '@angular/cdk-experimental/dialog';
+import { DialogService } from '@services/dialog.service';
+import { LoginFormComponent } from '@components/login-form/login-form.component';
+import { PartnersLoginFromComponent } from '@components/partners-login-from/partners-login-from.component';
 
 @Component({
   selector: 'app-reg-form',
@@ -13,6 +18,7 @@ export class RegFormComponent{
 	@Output() closeModal: EventEmitter<any> = new EventEmitter<any>();
 
 	constructor(
+		public dialog: DialogService,
 		private formBuilder: FormBuilder
 	) {
 		this.formGroup = this.formBuilder.group({

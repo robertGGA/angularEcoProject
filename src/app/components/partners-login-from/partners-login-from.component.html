@@ -1,10 +1,3 @@
-<div class='modal__container'>
-	<div class='modal__firstRow'>
-		<h2 class='title'>Вход</h2>
-		<button class='modal__closeButton'
-		        (click)='closeModal.emit()'>X
-		</button>
-	</div>
 	<form
 		[formGroup]='formGroup'>
 		<input
@@ -52,11 +45,11 @@
 				value='Получить код'></app-button>
 		</div>
 		<div class='modal__underLinks'>
-			<button>
+			<button (click)='this.dialog.openLoginDialog()'>
 				Я уже зарегистировался(-ась)
 			</button>
 		</div>
-		<div class='loginBtn'>
+		<div class='loginBtn' (click)='this.dialog.openLoginEmailDialog()'>
 			<app-button
 				value='Вход для партнёров'
 				[isLarge]='true'
@@ -65,5 +58,4 @@
 			</app-button>
 		</div>
 	</form>
-</div>
 

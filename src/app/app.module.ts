@@ -19,6 +19,11 @@ import { OverlayModule } from '@angular/cdk/overlay';
 import { CodeConfirmFormComponent } from './components/code-confirm-form/code-confirm-form.component';
 import { LoginEmailFormComponent } from './components/login-email-form/login-email-form.component';
 import { PartnersLoginFromComponent } from './components/partners-login-from/partners-login-from.component';
+import { ModalContainerComponent } from './components/modal-container/modal-container.component';
+import { PortalModule } from '@angular/cdk/portal';
+import { DialogModule } from '@angular/cdk-experimental/dialog';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { DialogCloseDirective } from './directives/dialog-close.directive';
 
 @NgModule({
 	declarations: [
@@ -30,18 +35,23 @@ import { PartnersLoginFromComponent } from './components/partners-login-from/par
 		BannerComponent,
 		LoginFormComponent,
 		RegFormComponent,
-  FormErrorMessageComponent,
-  ButtonComponent,
-  CodeConfirmFormComponent,
-  LoginEmailFormComponent,
-  PartnersLoginFromComponent,
+		FormErrorMessageComponent,
+		ButtonComponent,
+		CodeConfirmFormComponent,
+		LoginEmailFormComponent,
+		PartnersLoginFromComponent,
+		ModalContainerComponent,
+		DialogCloseDirective,
 	],
 	imports: [
 		SwiperModule,
 		BrowserModule,
 		AppRoutingModule,
 		ReactiveFormsModule,
-		OverlayModule
+		OverlayModule,
+		PortalModule,
+		DialogModule,
+		BrowserAnimationsModule,
 	],
 	providers: [],
 	bootstrap: [AppComponent]

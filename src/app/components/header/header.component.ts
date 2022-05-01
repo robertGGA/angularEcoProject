@@ -1,16 +1,23 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, Inject, Optional } from '@angular/core';
+import { DialogService } from '@services/dialog.service';
+import { LoginFormComponent } from '@components/login-form/login-form.component';
+
 
 @Component({
-  selector: 'Header',
-  templateUrl: './header.component.html',
-  styleUrls: ['./header.component.sass'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+	selector: 'Header',
+	templateUrl: './header.component.html',
+	styleUrls: ['./header.component.sass'],
+	changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+	constructor(private dialog: DialogService) {
+	}
 
-  ngOnInit(): void {
-  }
+	ngOnInit(): void {
+	}
 
+	openLoginDialog() {
+		this.dialog.openDialog(LoginFormComponent,{title: "Вход"})
+	}
 }

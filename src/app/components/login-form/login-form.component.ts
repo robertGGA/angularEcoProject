@@ -1,5 +1,9 @@
-import { Component, OnInit, ChangeDetectionStrategy, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, Output, EventEmitter, Optional, Inject } from '@angular/core';
 import { FormBuilder, FormGroup, Validator, Validators } from '@angular/forms';
+import { DIALOG_DATA, DialogRef } from '@angular/cdk-experimental/dialog';
+import { DialogService } from '@services/dialog.service';
+import { RegFormComponent } from '@components/reg-form/reg-form.component';
+import { CodeConfirmFormComponent } from '@components/code-confirm-form/code-confirm-form.component';
 
 @Component({
 	selector: 'app-login-form',
@@ -10,9 +14,9 @@ import { FormBuilder, FormGroup, Validator, Validators } from '@angular/forms';
 export class LoginFormComponent {
 
 	formGroup: FormGroup;
-	@Output() closeModal: EventEmitter<any> = new EventEmitter<any>();
 
 	constructor(
+		public dialog: DialogService,
 		private formBuilder: FormBuilder
 	) {
 		this.formGroup = this.formBuilder.group({
@@ -43,4 +47,5 @@ export class LoginFormComponent {
 			console.log(phone,password)
 		}
 	}
+
 }

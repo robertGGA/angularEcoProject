@@ -1,5 +1,11 @@
 import { Component, OnInit, ChangeDetectionStrategy, Output, EventEmitter } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { DialogRef } from '@angular/cdk-experimental/dialog';
+import { DialogService } from '@services/dialog.service';
+import { RegFormComponent } from '@components/reg-form/reg-form.component';
+import { CodeConfirmFormComponent } from '@components/code-confirm-form/code-confirm-form.component';
+import { LoginFormComponent } from '@components/login-form/login-form.component';
+import { LoginEmailFormComponent } from '@components/login-email-form/login-email-form.component';
 
 @Component({
   selector: 'app-partners-login-from',
@@ -12,6 +18,7 @@ export class PartnersLoginFromComponent {
 	@Output() closeModal: EventEmitter<any> = new EventEmitter<any>();
 
 	constructor(
+		public dialog: DialogService,
 		private formBuilder: FormBuilder
 	) {
 		this.formGroup = this.formBuilder.group({
@@ -25,6 +32,7 @@ export class PartnersLoginFromComponent {
 				Validators.maxLength(16)]]
 		})
 	}
+
 
 	validateControl(name: string, validateField: string) {
 		let control = this.formGroup.get(name);

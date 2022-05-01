@@ -1,5 +1,7 @@
 import { Component, OnInit, ChangeDetectionStrategy, Output, EventEmitter } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { DialogService } from '@services/dialog.service';
+import { PartnersLoginFromComponent } from '@components/partners-login-from/partners-login-from.component';
 
 @Component({
   selector: 'app-code-confirm-form',
@@ -9,10 +11,12 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class CodeConfirmFormComponent {
 
+	isSubmitted: boolean = false;
 	formGroup: FormGroup;
 	@Output() closeModal: EventEmitter<any> = new EventEmitter<any>();
 
 	constructor(
+		public dialog: DialogService,
 		private formBuilder: FormBuilder
 	) {
 		this.formGroup = this.formBuilder.group({

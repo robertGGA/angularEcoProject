@@ -1,12 +1,4 @@
-<p>login-form works!</p>
-<div class='modal__container'>
-	<div class='modal__firstRow'>
-		<h2 class='title'>Ввести код</h2>
-		<button class='modal__closeButton'
-		        (click)='closeModal.emit()'>X
-		</button>
-	</div>
-	<div class='codeModal__phone_number_container'>
+	<div *ngIf='isSubmitted' class='codeModal__phone_number_container'>
 		<p>Введите код отправленный вам на телефон</p>
 		<p class='codeModal__phone_number'>+7 (917) 888 88 88</p>
 	</div>
@@ -23,7 +15,7 @@
 		<ng-container *ngIf='validateControl("code","maxlength")'>
 			<app-form-error-message validationMessage='Максимальная длина превышена'></app-form-error-message>
 		</ng-container>
-		<div class='loginBtn'>
+		<div class='loginBtn' (click)='isSubmitted = true'>
 			<app-button
 				[isLarge]='true'
 				[isPrimary]='true'
@@ -35,7 +27,7 @@
 				Не получил(-а) код
 			</button>
 		</div>
-		<div class='loginBtn'>
+		<div class='loginBtn' (click)='this.dialog.openPartnersLoginDialog()'>
 			<app-button
 				value='Вход для партнёров'
 				[isLarge]='true'
@@ -44,5 +36,3 @@
 			</app-button>
 		</div>
 	</form>
-</div>
-
