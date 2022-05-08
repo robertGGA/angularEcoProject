@@ -31,7 +31,7 @@
 
 				<li class='navLink'>
 					<a
-						routerLink='/'
+						routerLink='/market'
 						routerLinkActive='active'
 						class='mainNavLink'
 					>
@@ -49,15 +49,28 @@
 					</a>
 				</li>
 
-				<li class='navLink'>
-					<a
-						class='mainNavLink'
-						(click)='openLoginDialog()'
-					>
-						Войти
-					</a>
-				</li>
 			</ul>
 		</nav>
+
+		<ul class=navList>
+			<li class='navLink_city navLink'>
+				<div class='headerIcon'>
+					<app-icon [width]='24' [height]='24' [item]='"mapPointer"'>
+					</app-icon>
+				</div>
+				Казань
+			</li>
+
+			<li class='navLink'>
+				<app-icon [width]='24' [height]='24' [item]='"login"'>
+				</app-icon>
+				<a
+					class='mainNavLink'
+					(click)='openLoginDialog()'
+				>
+					Войти
+				</a>
+			</li>
+		</ul>
 	</header>
 </div>

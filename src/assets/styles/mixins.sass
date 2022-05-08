@@ -1,0 +1,51 @@
+@use "varibles.sass" as var
+
+@mixin _900
+	@media (max-width: 900px)
+		@content
+
+@mixin _700
+	@media (max-width: 700px)
+		@content
+
+@mixin _375
+	@media (max-width: 700px)
+		@content
+
+@mixin modal-default-font-settings
+	font-weight: 400
+	font-size: 14px
+
+
+@mixin button-example
+	display: flex
+	height: 56px
+	justify-content: center
+	align-items: center
+	border-radius: 8px
+	border: none
+	margin-top: 32px
+	font-size: 16px
+	line-height: 24px
+
+@mixin mainNavLink
+	font-weight: 400
+	font-size: 14px
+	line-height: 18px
+	letter-spacing: -0.15px
+	color: rgba(0, 11, 38, 0.64)
+	&:hover
+		cursor: pointer
+		color: rgba(0, 7, 23, 0.64)
+
+@mixin mainNavLinkActive
+	@include mainNavLink
+	height: 100%
+	display: grid
+
+	color: rgb(0, 11, 38)
+	border-bottom: 2px solid rgb(15, 141, 106)
+	align-content: center
+
+	&:hover
+		color: rgb(0, 11, 38)

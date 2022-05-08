@@ -28,4 +28,4 @@ const generateSprite = (outputPath = './src/assets/sprites/sprite.svg') => {
 	fs.writeFileSync(outputPath, sprite);
 };
 
-generateSprite(`./public/sprite.svg`); // путь, куда выгрузится sprite
+generateSprite(`./src/assets/sprites/sprite.svg`); // путь, куда выгрузится sprite

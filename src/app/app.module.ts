@@ -13,12 +13,30 @@ import 'swiper/css';
 import { LoginFormComponent } from '@components/login-form/login-form.component';
 import { RegFormComponent } from '@components/reg-form/reg-form.component'
 import { ReactiveFormsModule } from '@angular/forms';
-import { FormErrorMessageComponent } from './components/ui/form-error-message/form-error-message.component';
-import { ButtonComponent } from './components/ui/button/button.component';
+import { FormErrorMessageComponent } from '@components/ui/form-error-message/form-error-message.component';
+import { ButtonComponent } from '@components/ui/button/button.component';
 import { OverlayModule } from '@angular/cdk/overlay';
-import { CodeConfirmFormComponent } from './components/code-confirm-form/code-confirm-form.component';
-import { LoginEmailFormComponent } from './components/login-email-form/login-email-form.component';
-import { PartnersLoginFromComponent } from './components/partners-login-from/partners-login-from.component';
+import { CodeConfirmFormComponent } from '@components/code-confirm-form/code-confirm-form.component';
+import { LoginEmailFormComponent } from '@components/login-email-form/login-email-form.component';
+import { PartnersLoginFromComponent } from '@components/partners-login-from/partners-login-from.component';
+import { MainPageCardComponent } from '@components/ui/main-page-card/main-page-card.component';
+import { DialogCloseDirective } from '@directives/dialog-close.directive';
+import { ModalContainerComponent } from '@components/modal-container/modal-container.component';
+import { PortalModule } from '@angular/cdk/portal';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { DialogModule } from '@angular/cdk-experimental/dialog';
+import { ProfilePageComponent } from '@pages/profile-page/profile-page.component';
+import { UserCardComponent } from '@components/cards/user-card/user-card.component';
+import { CardListSwitcherComponent } from '@components/card-list-switcher/card-list-switcher.component';
+import { PromocodeCardComponent } from '@components/cards/promocode-card/promocode-card.component';
+import { RouterModule } from '@angular/router';
+import { MarketPageComponent } from '@pages/market-page/market-page.component';
+import { HistoryCardComponent } from '@components/cards/history-card/history-card.component';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { ErrorInterceptorService } from '@services/error-interceptor.service';
+import { UrlInterceptorService } from '@services/url-interceptor.service';
+import { AuthInterceptorService } from '@services/auth-interceptor.service';
+
 
 @NgModule({
 	declarations: [
@@ -30,12 +48,12 @@ import { PartnersLoginFromComponent } from './components/partners-login-from/par
 		BannerComponent,
 		LoginFormComponent,
 		RegFormComponent,
-  FormErrorMessageComponent,
-  ButtonComponent,
-  CodeConfirmFormComponent,
-  LoginEmailFormComponent,
-  PartnersLoginFromComponent,
-  MainPageCardComponent,
+		FormErrorMessageComponent,
+		ButtonComponent,
+		CodeConfirmFormComponent,
+		LoginEmailFormComponent,
+		PartnersLoginFromComponent,
+		MainPageCardComponent,
 		FormErrorMessageComponent,
 		ButtonComponent,
 		CodeConfirmFormComponent,
@@ -43,6 +61,12 @@ import { PartnersLoginFromComponent } from './components/partners-login-from/par
 		PartnersLoginFromComponent,
 		ModalContainerComponent,
 		DialogCloseDirective,
+		ProfilePageComponent,
+		UserCardComponent,
+		CardListSwitcherComponent,
+		PromocodeCardComponent,
+		MarketPageComponent,
+		HistoryCardComponent,
 	],
 	imports: [
 		SwiperModule,
@@ -53,8 +77,26 @@ import { PartnersLoginFromComponent } from './components/partners-login-from/par
 		PortalModule,
 		DialogModule,
 		BrowserAnimationsModule,
+		RouterModule,
+		HttpClientModule
 	],
-	providers: [],
+	providers: [
+		{
+			provide: HTTP_INTERCEPTORS,
+			useClass: UrlInterceptorService,
+			multi: true,
+		},
+		{
+			provide: HTTP_INTERCEPTORS,
+			useClass: AuthInterceptorService,
+			multi: true,
+		},
+		{
+			provide: HTTP_INTERCEPTORS,
+			useClass: ErrorInterceptorService,
+			multi: true
+		}
+	],
 	bootstrap: [AppComponent]
 })
 export class AppModule {

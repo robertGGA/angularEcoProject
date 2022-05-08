@@ -6,7 +6,7 @@ import { Component, OnInit, ChangeDetectionStrategy, Input } from '@angular/core
 	styleUrls: ['./button.component.sass'],
 	changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ButtonComponent implements OnInit {
+export class ButtonComponent {
 
 	@Input() isLarge: boolean
 	@Input() isPrimary: boolean
@@ -19,7 +19,5 @@ export class ButtonComponent implements OnInit {
 		this.value = 'default';
 	}
 
-	ngOnInit(): void {
-	}
 
 }

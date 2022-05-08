@@ -7,10 +7,15 @@ import { Component, OnInit, ChangeDetectionStrategy, Input } from '@angular/core
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class IconComponent {
-	width!: number;
-	height!: number
+	@Input() width!: number;
+	@Input() height!: number;
+	@Input() item: string = '';
 
-  constructor() {
 
-  }
+	getPath() {
+		const item = this.item;
+		this.item = `./../../../../assets/sprites/sprite.svg#${item}`
+		return this.item;
+	}
+
 }

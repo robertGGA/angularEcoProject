@@ -7,12 +7,12 @@ import { CodeConfirmFormComponent } from '@components/code-confirm-form/code-con
 import { PartnersLoginFromComponent } from '@components/partners-login-from/partners-login-from.component';
 
 @Component({
-  selector: 'app-login-email-form',
-  templateUrl: './login-email-form.component.html',
-  styleUrls: ['./login-email-form.component.sass'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+	selector: 'app-login-email-form',
+	templateUrl: './login-email-form.component.html',
+	styleUrls: ['./login-email-form.component.sass'],
+	changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class LoginEmailFormComponent{
+export class LoginEmailFormComponent {
 	formGroup: FormGroup;
 	@Output() closeModal: EventEmitter<any> = new EventEmitter<any>();
 
@@ -44,9 +44,9 @@ export class LoginEmailFormComponent{
 		return this.formGroup.get(name)!;
 	}
 
-	onSubmit(phone: string, password: string){
-		return ()=>{
-			console.log(phone,password)
+	onSubmit(phone: string, password: string) {
+		return () => {
+			console.log(phone, password)
 		}
 	}
 }

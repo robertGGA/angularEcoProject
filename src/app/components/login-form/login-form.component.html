@@ -1,49 +1,54 @@
-	<form
-		[formGroup]='formGroup'>
-		<input
-			formControlName='phone'
-			class='formInput'
-			[class.errorFormInput]='isControlValid("phone")'
-			placeholder='Телефон'>
-		<ng-container *ngIf='validateControl("phone","required")'>
-			<app-form-error-message validationMessage='Это поле обязательно'></app-form-error-message>
-		</ng-container>
-		<ng-container *ngIf='validateControl("phone","maxlength")'>
-			<app-form-error-message validationMessage='Максимальная длина превышена'></app-form-error-message>
-		</ng-container>
-		<input
-			formControlName='password'
-			class='formInput'
-			[class.errorFormInput]='isControlValid("password")'
-			placeholder='Пароль'
-			type='password'>
-		<ng-container *ngIf='validateControl("password","required")'>
-			<app-form-error-message validationMessage='Это поле обязательно'></app-form-error-message>
-		</ng-container>
-		<ng-container *ngIf='validateControl("password","maxlength")'>
-			<app-form-error-message validationMessage='Максимальная длина превышена'></app-form-error-message>
-		</ng-container>
-		<div class='loginBtn'>
-			<app-button
-				[isLarge]='true'
-				[isPrimary]='true'
-				[submitFunc]='onSubmit("phone","password")'
-				value='Вход'></app-button>
-		</div>
-		<div class='modal__underLinks'>
-			<button (click)='this.dialog.openCodeConfirmDialog()'>
-				Войти с помощью смс
-			</button>
-			<button (click)='this.dialog.openRegDialog()'>
-				Регистрация
-			</button>
-		</div>
-		<div class='loginBtn'>
-			<app-button
-				value='Вход для партнёров'
-				[isLarge]='true'
-				[isPrimary]='false'
-				[submitFunc]='onSubmit'>
-			</app-button>
-		</div>
-	</form>
+<form
+	[formGroup]='formGroup'
+>
+	<input
+		formControlName='phone'
+		class='formInput'
+		[class.errorFormInput]='isControlValid("phone")'
+		placeholder='Телефон'
+	>
+	<ng-container *ngIf='validateControl("phone","required")'>
+		<app-form-error-message validationMessage='Это поле обязательно'></app-form-error-message>
+	</ng-container>
+	<ng-container *ngIf='validateControl("phone","maxlength")'>
+		<app-form-error-message validationMessage='Максимальная длина превышена'></app-form-error-message>
+	</ng-container>
+	<input
+		formControlName='password'
+		class='formInput'
+		[class.errorFormInput]='isControlValid("password")'
+		placeholder='Пароль'
+		type='password'
+	>
+	<ng-container *ngIf='validateControl("password","required")'>
+		<app-form-error-message validationMessage='Это поле обязательно'></app-form-error-message>
+	</ng-container>
+	<ng-container *ngIf='validateControl("password","maxlength")'>
+		<app-form-error-message validationMessage='Максимальная длина превышена'></app-form-error-message>
+	</ng-container>
+	<div class='loginBtn'>
+		<app-button
+			[isLarge]='true'
+			[isPrimary]='true'
+			[submitFunc]='onSubmit(formGroup.value.phone, formGroup.value.password)'
+			value='Вход'
+		></app-button>
+	</div>
+	<div class='modal__underLinks'>
+		<button (click)='this.dialog.openCodeConfirmDialog()'>
+			Войти с помощью смс
+		</button>
+		<button (click)='this.dialog.openRegDialog()'>
+			Регистрация
+		</button>
+	</div>
+	<div class='loginBtn'>
+		<app-button
+			value='Вход для партнёров'
+			[isLarge]='true'
+			[isPrimary]='false'
+			[submitFunc]=''
+		>
+		</app-button>
+	</div>
+</form>

@@ -4,6 +4,7 @@ import { DIALOG_DATA, DialogRef } from '@angular/cdk-experimental/dialog';
 import { DialogService } from '@services/dialog.service';
 import { RegFormComponent } from '@components/reg-form/reg-form.component';
 import { CodeConfirmFormComponent } from '@components/code-confirm-form/code-confirm-form.component';
+import { AuthService } from '@services/auth.service';
 
 @Component({
 	selector: 'app-login-form',
@@ -17,7 +18,8 @@ export class LoginFormComponent {
 
 	constructor(
 		public dialog: DialogService,
-		private formBuilder: FormBuilder
+		private formBuilder: FormBuilder,
+		private authService: AuthService,
 	) {
 		this.formGroup = this.formBuilder.group({
 			phone: ['', [
@@ -42,10 +44,17 @@ export class LoginFormComponent {
 		return this.formGroup.get(name)!;
 	}
 
-	onSubmit(phone: string, password: string){
-		return ()=>{
-			console.log(phone,password)
+	onSubmit(phone: string, password: string) {
+		const login = () => {
+			this.authService.authorize({phone, password}).subscribe(res => {
+				console.log('works');
+				this.authService.token = res.token;
+			}, err => {
+				console.log(err);
+			})
 		}
+
+		return login;
 	}
 
 }
