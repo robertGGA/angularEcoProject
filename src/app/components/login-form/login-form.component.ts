@@ -47,8 +47,8 @@ export class LoginFormComponent {
 	onSubmit(phone: string, password: string) {
 		const login = () => {
 			this.authService.authorize({phone, password}).subscribe(res => {
-				console.log('works');
 				this.authService.token = res.token;
+				console.log(res);
 			}, err => {
 				console.log(err);
 			})

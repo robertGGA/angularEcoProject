@@ -5,26 +5,37 @@ import { DialogRef } from '@angular/cdk-experimental/dialog';
 import { DialogService } from '@services/dialog.service';
 import { LoginFormComponent } from '@components/login-form/login-form.component';
 import { PartnersLoginFromComponent } from '@components/partners-login-from/partners-login-from.component';
+import { AuthService } from '@services/auth.service';
 
 @Component({
-  selector: 'app-reg-form',
-  templateUrl: './reg-form.component.html',
-  styleUrls: ['./reg-form.component.sass'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+	selector: 'app-reg-form',
+	templateUrl: './reg-form.component.html',
+	styleUrls: ['./reg-form.component.sass'],
+	changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class RegFormComponent{
+export class RegFormComponent {
 
 	formGroup: FormGroup;
 	@Output() closeModal: EventEmitter<any> = new EventEmitter<any>();
 
 	constructor(
 		public dialog: DialogService,
-		private formBuilder: FormBuilder
+		private formBuilder: FormBuilder,
+		private authService: AuthService,
 	) {
 		this.formGroup = this.formBuilder.group({
 			phone: ['', [
 				Validators.required,
-				Validators.maxLength(11)]]
+				Validators.maxLength(11)
+			]],
+			password: ['', [
+				Validators.required
+			]],
+			email: ['', [
+				Validators.required,
+				Validators.email
+			]],
+			role: 'USER'
 		})
 	}
 
@@ -42,9 +53,14 @@ export class RegFormComponent{
 		return this.formGroup.get(name)!;
 	}
 
-	onSubmit(phone: string, password: string){
-		return ()=>{
-			console.log(phone,password)
+	onSubmit() {
+		return () => {
+			this.authService.registration(this.formGroup.value).subscribe(res => {
+				console.log(res);
+				this.dialog.openLoginDialog();
+			}, err => {
+				console.log(err);
+			})
 		}
 	}
 

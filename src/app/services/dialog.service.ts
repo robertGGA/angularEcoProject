@@ -8,18 +8,19 @@ import { CodeConfirmFormComponent } from '@components/code-confirm-form/code-con
 import { LoginFormComponent } from '@components/login-form/login-form.component';
 import { LoginEmailFormComponent } from '@components/login-email-form/login-email-form.component';
 
-interface DialogData{
+interface DialogData {
 	title: string,
 }
 
 @Injectable({
-  providedIn: 'root'
+	providedIn: 'root'
 })
 
 export class DialogService {
-	constructor(private dialog: Dialog) {}
+	constructor(private dialog: Dialog) {
+	}
 
-	openDialog<T>(component: ComponentType<T>,data: DialogData,config: DialogConfig = {}): DialogRef<ModalContainerComponent> {
+	openDialog<T>(component: ComponentType<T>, data: DialogData, config: DialogConfig = {}): DialogRef<ModalContainerComponent> {
 		this.dialog.closeAll();
 		return this.dialog.openFromComponent(component, {
 			maxWidth: 'none',
@@ -28,19 +29,24 @@ export class DialogService {
 			containerComponent: ModalContainerComponent,
 		});
 	}
-	openPartnersLoginDialog(){
-		this.openDialog(PartnersLoginFromComponent,{title: "Вход"});
+
+	openPartnersLoginDialog() {
+		this.openDialog(PartnersLoginFromComponent, { title: 'Вход' });
 	}
-	openRegDialog(){
-		this.openDialog(RegFormComponent,{title: "Вход или регистрация"});
+
+	openRegDialog() {
+		this.openDialog(RegFormComponent, { title: 'Вход или регистрация' });
 	}
+
 	openCodeConfirmDialog() {
-		this.openDialog(CodeConfirmFormComponent,{title: "Ввести код"});
+		this.openDialog(CodeConfirmFormComponent, { title: 'Ввести код' });
 	}
-	openLoginDialog(){
-		this.openDialog(LoginFormComponent,{title: "Вход"});
+
+	openLoginDialog() {
+		this.openDialog(LoginFormComponent, { title: 'Вход' });
 	}
-	openLoginEmailDialog(){
-		this.openDialog(LoginEmailFormComponent,{title: "Вход"});
+
+	openLoginEmailDialog() {
+		this.openDialog(LoginEmailFormComponent, { title: 'Вход' });
 	}
 }

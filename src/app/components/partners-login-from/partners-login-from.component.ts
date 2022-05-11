@@ -8,10 +8,10 @@ import { LoginFormComponent } from '@components/login-form/login-form.component'
 import { LoginEmailFormComponent } from '@components/login-email-form/login-email-form.component';
 
 @Component({
-  selector: 'app-partners-login-from',
-  templateUrl: './partners-login-from.component.html',
-  styleUrls: ['./partners-login-from.component.sass'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+	selector: 'app-partners-login-from',
+	templateUrl: './partners-login-from.component.html',
+	styleUrls: ['./partners-login-from.component.sass'],
+	changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class PartnersLoginFromComponent {
 	formGroup: FormGroup;
@@ -22,7 +22,7 @@ export class PartnersLoginFromComponent {
 		private formBuilder: FormBuilder
 	) {
 		this.formGroup = this.formBuilder.group({
-			name:['',Validators.required,
+			name: ['', Validators.required,
 				Validators.maxLength(64)],
 			email: ['', [
 				Validators.required,
@@ -48,9 +48,9 @@ export class PartnersLoginFromComponent {
 		return this.formGroup.get(name)!;
 	}
 
-	onSubmit(phone: string, password: string){
-		return ()=>{
-			console.log(phone,password)
+	onSubmit(phone: string, password: string) {
+		return () => {
+			console.log(phone, password)
 		}
 	}
 

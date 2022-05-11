@@ -8,6 +8,13 @@ interface AuthParams {
 	password: string;
 }
 
+interface RegParams {
+	email: string;
+	phone_number: string;
+	password: string;
+	role: string;
+}
+
 @Injectable({
 	providedIn: 'root'
 })
@@ -21,8 +28,11 @@ export class AuthService {
 	}
 
 	authorize(authParams: AuthParams): Observable<any> {
-
 		return this.http.post('login', authParams);
+	}
+
+	registration(regParams: RegParams): Observable<any> {
+		return this.http.post('account', regParams);
 	}
 
 	getProfile(): Observable<any> {
