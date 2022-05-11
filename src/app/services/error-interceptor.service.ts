@@ -12,7 +12,6 @@ export class ErrorInterceptorService implements HttpInterceptor {
 			catchError((err: HttpErrorResponse) => {
 				if (err.error.message) {
 					console.log(err.error.message)
-
 				}
 
 				return throwError(err);

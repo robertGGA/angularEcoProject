@@ -5,6 +5,7 @@ import { ProfilePageComponent } from '@pages/profile-page/profile-page.component
 import { PromocodeCardComponent } from '@components/cards/promocode-card/promocode-card.component';
 import { HistoryCardComponent } from '@components/cards/history-card/history-card.component';
 import { MarketPageComponent } from '@pages/market-page/market-page.component';
+import { AuthGuard } from '@guards/auth-guard';
 
 const profileRoutes: Routes = [
 	{ path: 'promocode', component: PromocodeCardComponent },
@@ -14,8 +15,8 @@ const profileRoutes: Routes = [
 
 const routes: Routes = [
 	{ path: '', component: MainPageComponent },
-	{ path: 'profile', component: ProfilePageComponent, children: profileRoutes },
-	{ path: 'market', component: MarketPageComponent }
+	{ path: 'profile', component: ProfilePageComponent, children: profileRoutes, canActivate: [AuthGuard] },
+	{ path: 'market', component: MarketPageComponent}
 ];
 
 @NgModule({

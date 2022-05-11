@@ -36,6 +36,7 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { ErrorInterceptorService } from '@services/error-interceptor.service';
 import { UrlInterceptorService } from '@services/url-interceptor.service';
 import { AuthInterceptorService } from '@services/auth-interceptor.service';
+import { AuthGuard } from '@guards/auth-guard';
 
 
 @NgModule({
@@ -95,7 +96,9 @@ import { AuthInterceptorService } from '@services/auth-interceptor.service';
 			provide: HTTP_INTERCEPTORS,
 			useClass: ErrorInterceptorService,
 			multi: true
-		}
+		},
+
+		AuthGuard
 	],
 	bootstrap: [AppComponent]
 })

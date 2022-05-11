@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 interface AuthParams {
-	phone: string;
+	login: string;
 	password: string;
 }
 
@@ -28,6 +28,7 @@ export class AuthService {
 	}
 
 	authorize(authParams: AuthParams): Observable<any> {
+		console.log(authParams)
 		return this.http.post('login', authParams);
 	}
 

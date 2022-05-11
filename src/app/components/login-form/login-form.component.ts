@@ -5,6 +5,7 @@ import { DialogService } from '@services/dialog.service';
 import { RegFormComponent } from '@components/reg-form/reg-form.component';
 import { CodeConfirmFormComponent } from '@components/code-confirm-form/code-confirm-form.component';
 import { AuthService } from '@services/auth.service';
+import { group } from '@angular/animations';
 
 @Component({
 	selector: 'app-login-form',
@@ -44,17 +45,18 @@ export class LoginFormComponent {
 		return this.formGroup.get(name)!;
 	}
 
-	onSubmit(phone: string, password: string) {
-		const login = () => {
-			this.authService.authorize({phone, password}).subscribe(res => {
+	onSubmit() {
+		const login = this.formGroup.value.phone;
+		const password = this.formGroup.value.password;
+		return () => {
+			this.authService.authorize({login, password}).subscribe(res => {
 				this.authService.token = res.token;
+				console.log(this.authService.token);
 				console.log(res);
 			}, err => {
 				console.log(err);
 			})
 		}
-
-		return login;
 	}
 
 }
