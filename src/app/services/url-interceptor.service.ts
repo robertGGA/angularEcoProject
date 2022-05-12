@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpContextToken, HttpEvent, HttpHandler, HttpInterceptor, HttpRequest } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { env } from '../env/env';
+import { environment } from '../../environments/environment';
 
 export const StartsWithHttp = new HttpContextToken<boolean>(() => false);
 
@@ -16,7 +16,7 @@ export class UrlInterceptorService implements HttpInterceptor {
 			request.url.startsWith('/') ||
 			request.context.get(StartsWithHttp)
 				? request.url
-				: [env.apiUrl, request.url].join('/'),
+				: [environment.apiUrl, request.url].join('/'),
 		})
 		return next.handle(req);
 	}

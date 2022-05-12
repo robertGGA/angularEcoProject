@@ -51,8 +51,6 @@ export class LoginFormComponent {
 		return () => {
 			this.authService.authorize({login, password}).subscribe(res => {
 				this.authService.token = res.token;
-				console.log(this.authService.token);
-				console.log(res);
 			}, err => {
 				console.log(err);
 			})

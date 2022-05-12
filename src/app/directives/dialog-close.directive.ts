@@ -1,8 +1,8 @@
-import { Directive, ElementRef, HostListener, Input, Optional} from '@angular/core';
+import { Directive, ElementRef, HostListener, Input, Optional } from '@angular/core';
 import { Dialog, DialogRef } from '@angular/cdk-experimental/dialog';
 
 @Directive({
-  selector: '[appDialogClose]'
+	selector: '[appDialogClose]'
 })
 export class DialogCloseDirective {
 	@Input('app-dialog-close') dialogResult: any;
@@ -12,7 +12,8 @@ export class DialogCloseDirective {
 		@Optional() public dialogRef: DialogRef<any>,
 		private _elementRef: ElementRef<HTMLElement>,
 		private _dialog: Dialog,
-	) {}
+	) {
+	}
 
 	@HostListener('click') close(): void {
 		this.dialogRef ? this.dialogRef.close(this.dialogResult) : this._dialog.closeAll();
