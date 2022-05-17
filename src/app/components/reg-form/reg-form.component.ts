@@ -24,7 +24,7 @@ export class RegFormComponent {
 		private authService: AuthService,
 	) {
 		this.formGroup = this.formBuilder.group({
-			phone: ['', [
+			phone_number: ['', [
 				Validators.required,
 				Validators.maxLength(11)
 			]],
@@ -55,6 +55,7 @@ export class RegFormComponent {
 
 	onSubmit() {
 		return () => {
+			console.log(this.formGroup.value);
 			this.authService.registration(this.formGroup.value).subscribe(res => {
 				console.log(res);
 				this.dialog.openLoginDialog();

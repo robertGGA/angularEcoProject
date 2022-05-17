@@ -1,1 +1,68 @@
-<p>market-page works!</p>
+<div class='marketWrapper'>
+	<div class='marketTitleWrapper'>
+		<h1>ЭкоМаркет</h1>
+		<div class='filterChipsWrapper'>
+			<button class='filterChipsActive'>По популярности</button>
+			<button class='filterChips'>По цене</button>
+			<button class='filterChips'>По новизне</button>
+		</div>
+	</div>
+	<div class='mainContentWrapper'>
+		<div class='temp'>
+			<button class='removeFiltersBtn'
+			        onClick='() => addModal(MobileFiltersModal)'>
+				Фильтры
+			</button>
+			<div class='filters_wrapper'>
+				<app-filter></app-filter>
+			</div>
+			<button class='removeFiltersBtn'>Сбросить фильтры</button>
+		</div>
+		<div class='productsTable'>
+			<div class='productsTableRow'>
+				<div class=balanceCard>
+				    <div class="balanceCardTitle">
+				        На вашем балансе
+				        <img class="balanceLogo" src="assets/images/img.png"/>
+				        <div class="balance">200</div>
+				    </div>*/}
+				    Вы можете обменять их на скидку 200 руб
+				    <button class="promoCodeBtn">Получить промокод</button>
+				</div>
+
+				<app-product-card
+					imgUrl='assets/images/marketProductImage.png'
+					brand='Nike'
+					productName='Nike Air Max 2021'
+					productType='Мужская обувь'
+					cost='1000'></app-product-card>
+				<app-product-card
+					imgUrl='assets/images/marketProductImage.png'
+					brand='Nike'
+					productName='Nike Air Max 2021'
+					productType='Мужская обувь'
+					cost='1000'></app-product-card>
+			</div>
+			<div class='productsTableRow'>
+				<app-product-card
+					imgUrl='assets/images/marketProductImage.png'
+					brand='Nike'
+					productName='Nike Air Max 2021'
+					productType='Мужская обувь'
+					cost='1000'></app-product-card>
+				<app-product-card
+					imgUrl='assets/images/marketProductImage.png'
+					brand='Nike'
+					productName='Nike Air Max 2021'
+					productType='Мужская обувь'
+					cost='1000'></app-product-card>
+				<app-product-card
+					imgUrl='assets/images/marketProductImage.png'
+					brand='Nike'
+					productName='Nike Air Max 2021'
+					productType='Мужская обувь'
+					cost='1000'></app-product-card>
+			</div>
+		</div>
+	</div>
+</div>

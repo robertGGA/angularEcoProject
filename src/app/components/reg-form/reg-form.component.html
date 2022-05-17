@@ -2,15 +2,15 @@
 	[formGroup]='formGroup'
 >
 	<input
-		formControlName='phone'
+		formControlName='phone_number'
 		class='formInput'
-		[class.errorFormInput]='isControlValid("phone")'
+		[class.errorFormInput]='isControlValid("phone_number")'
 		placeholder='Телефон'
 	>
-	<ng-container *ngIf='validateControl("phone","required")'>
+	<ng-container *ngIf='validateControl("phone_number","required")'>
 		<app-form-error-message validationMessage='Это поле обязательно'></app-form-error-message>
 	</ng-container>
-	<ng-container *ngIf='validateControl("phone","maxlength")'>
+	<ng-container *ngIf='validateControl("phone_number","maxlength")'>
 		<app-form-error-message validationMessage='Максимальная длина превышена'></app-form-error-message>
 	</ng-container>
 

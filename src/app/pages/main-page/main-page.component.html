@@ -1,18 +1,5 @@
 <main class='mainCards__wrapper'>
 	<app-banner-swiper></app-banner-swiper>
-	<button (click)='openModal()' cdkOverlayOrigin #trigger="cdkOverlayOrigin">
-		открыть модалку
-	</button>
-	<ng-template
-		cdkConnectedOverlay
-		[cdkConnectedOverlayOrigin]='trigger'
-		[cdkConnectedOverlayOpen]='isModalOpen'
-		[cdkConnectedOverlayHasBackdrop] = 'true'
-		(backdropClick)='isModalOpen = false'
-	>
-			<app-partners-login-from (closeModal) = 'closeModal()'></app-partners-login-from>
-	</ng-template>
-
 	<div class='navCardsWrapper'>
 		<div class='navCards'>
 			<app-main-page-card
@@ -21,7 +8,6 @@
 				bgImg='./assets/images/map.svg'
 				link='/f'
 			></app-main-page-card>
-
 			<app-main-page-card
 				text="Используй заработанные экокоины для покупки товаров из переработанных материалов "
 				title='ЭкоМаркет'

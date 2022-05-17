@@ -17,10 +17,6 @@ export class MainPageComponent implements OnInit {
 	ngOnInit(): void {
 	}
 
-	openModal() {
-		this.isModalOpen = true;
-	}
-
 	closeModal() {
 		this.isModalOpen = false;
 	}

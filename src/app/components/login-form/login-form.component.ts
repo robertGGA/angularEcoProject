@@ -50,6 +50,7 @@ export class LoginFormComponent {
 		const password = this.formGroup.value.password;
 		return () => {
 			this.authService.authorize({login, password}).subscribe(res => {
+				console.log(res.token)
 				this.authService.token = res.token;
 			}, err => {
 				console.log(err);
