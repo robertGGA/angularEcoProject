@@ -23,7 +23,7 @@ export class AuthService {
 	@LocalStorage() user?: any | null;
 	@LocalStorage() token?: string | null;
 
-	constructor( private http: HttpClient ) {
+	constructor(private http: HttpClient) {
 
 	}
 
@@ -43,6 +43,7 @@ export class AuthService {
 	get isAuthorized(): boolean {
 		return this.token !== null;
 	}
+
 
 	saveToStorage(res: any): void {
 		this.token = res.access_token;

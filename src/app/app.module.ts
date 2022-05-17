@@ -41,6 +41,7 @@ import { ProductCardComponent } from '@components/product-card/product-card.comp
 import { FilterComponent } from '@components/filter/filter.component';
 import { SubFilterComponent } from './components/sub-filter/sub-filter.component';
 import { FilterCheckboxComponent } from './components/filter-checkbox/filter-checkbox.component';
+import { MapPageComponent } from './pages/map-page/map-page.component';
 
 
 @NgModule({
@@ -74,8 +75,9 @@ import { FilterCheckboxComponent } from './components/filter-checkbox/filter-che
 		HistoryCardComponent,
 		ProductCardComponent,
 		FilterComponent,
-  SubFilterComponent,
-  FilterCheckboxComponent,
+		SubFilterComponent,
+		FilterCheckboxComponent,
+		MapPageComponent,
 	],
 	imports: [
 		SwiperModule,

@@ -2,10 +2,10 @@ import { Component, OnInit, ChangeDetectionStrategy, Output, EventEmitter, Optio
 import { FormBuilder, FormGroup, Validator, Validators } from '@angular/forms';
 import { DIALOG_DATA, DialogRef } from '@angular/cdk-experimental/dialog';
 import { DialogService } from '@services/dialog.service';
-import { RegFormComponent } from '@components/reg-form/reg-form.component';
-import { CodeConfirmFormComponent } from '@components/code-confirm-form/code-confirm-form.component';
 import { AuthService } from '@services/auth.service';
-import { group } from '@angular/animations';
+
+import { ActivatedRoute, Router } from '@angular/router';
+import { DialogCloseDirective } from '@directives/dialog-close.directive';
 
 @Component({
 	selector: 'app-login-form',
@@ -21,6 +21,7 @@ export class LoginFormComponent {
 		public dialog: DialogService,
 		private formBuilder: FormBuilder,
 		private authService: AuthService,
+		private route: Router,
 	) {
 		this.formGroup = this.formBuilder.group({
 			phone: ['', [
@@ -52,6 +53,7 @@ export class LoginFormComponent {
 			this.authService.authorize({login, password}).subscribe(res => {
 				console.log(res.token)
 				this.authService.token = res.token;
+				this.route.navigate(['/profile']);
 			}, err => {
 				console.log(err);
 			})
