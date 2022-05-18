@@ -1,0 +1,13 @@
+<div class='filterModal__container'>
+	<div class='filterModal__firstRow'>
+		<button class='filterModal__closeButton' [appDialogClose]></button>
+	</div>
+	<ng-template [cdkPortalOutlet]="portal">
+	</ng-template>
+	<button class='button_submit' [appDialogClose]>
+		Применить
+	</button>
+	<button class='button_remove'>
+		Сбросить фильтры
+	</button>
+</div>

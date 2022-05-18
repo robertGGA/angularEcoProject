@@ -1,6 +1,5 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
-import { FormArray, FormBuilder, FormControl, FormGroup } from '@angular/forms';
-import { ProductFilterService } from '@services/product-filter.service';
+import { FormArray, FormBuilder,  FormGroup } from '@angular/forms';
 
 @Component({
 	selector: 'app-filter',
@@ -8,13 +7,11 @@ import { ProductFilterService } from '@services/product-filter.service';
 	styleUrls: ['./filter.component.sass'],
 	changeDetection: ChangeDetectionStrategy.OnPush
 })
+
 export class FilterComponent {
 	formGroup: FormGroup
-
 	constructor(
-		formBuilder: FormBuilder,
-		filterService: ProductFilterService) {
-		let filtersList = filterService.getFiltersList();
+		formBuilder: FormBuilder) {
 		this.formGroup = formBuilder.group({
 			genderGroup: formBuilder.group(
 				{

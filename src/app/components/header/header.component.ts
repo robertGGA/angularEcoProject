@@ -4,8 +4,6 @@ import { LoginFormComponent } from '@components/login-form/login-form.component'
 import { AuthService } from '@services/auth.service';
 import { Observable, observable, of } from 'rxjs';
 
-
-
 @Component({
 	selector: 'Header',
 	templateUrl: './header.component.html',
@@ -16,16 +14,10 @@ export class HeaderComponent{
 
 	@Input() isAuth$ = of(!this.auth.isAuthorized);
 
-	constructor(private dialog: DialogService, @Inject(AuthService) private auth: AuthService) {
-
-	}
+	constructor(private dialog: DialogService, @Inject(AuthService) private auth: AuthService) {}
 
 	openLoginDialog() {
-		this.dialog.openDialog(LoginFormComponent, { title: 'Вход' })
+		this.dialog.openAuthDialog(LoginFormComponent, { title: 'Вход' })
 	}
-
-
-
-
 
 }

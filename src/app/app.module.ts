@@ -42,6 +42,7 @@ import { FilterComponent } from '@components/filter/filter.component';
 import { SubFilterComponent } from './components/sub-filter/sub-filter.component';
 import { FilterCheckboxComponent } from './components/filter-checkbox/filter-checkbox.component';
 import { MapPageComponent } from './pages/map-page/map-page.component';
+import { FilterModalContainerComponent } from './components/filter-modal-container/filter-modal-container.component';
 
 
 @NgModule({
@@ -78,6 +79,7 @@ import { MapPageComponent } from './pages/map-page/map-page.component';
 		SubFilterComponent,
 		FilterCheckboxComponent,
 		MapPageComponent,
+  FilterModalContainerComponent,
 	],
 	imports: [
 		SwiperModule,
