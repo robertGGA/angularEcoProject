@@ -37,10 +37,10 @@ import { ErrorInterceptorService } from '@services/error-interceptor.service';
 import { UrlInterceptorService } from '@services/url-interceptor.service';
 import { AuthInterceptorService } from '@services/auth-interceptor.service';
 import { AuthGuard } from '@guards/auth-guard';
-import { ProductCardComponent } from '@components/product-card/product-card.component';
+import { ProductCardComponent } from '@components/ui/product-card/product-card.component';
 import { FilterComponent } from '@components/filter/filter.component';
-import { SubFilterComponent } from './components/sub-filter/sub-filter.component';
-import { FilterCheckboxComponent } from './components/filter-checkbox/filter-checkbox.component';
+import { SubFilterComponent } from '@components/sub-filter/sub-filter.component';
+import { FilterCheckboxComponent } from '@components/filter-checkbox/filter-checkbox.component';
 
 
 @NgModule({

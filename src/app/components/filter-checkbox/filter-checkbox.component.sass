@@ -27,15 +27,20 @@ input[type="checkbox"]
 	box-sizing: content-box
 	border: 2px solid rgba(0, 11, 38, 0.4)
 
+	&:hover
+		cursor: pointer
 
+	& .checkbox-active
+		border: none
+		height: 18px
+		width: 18px
+		background: #07C88E
 
-.checkbox_active
+.checkbox-active
 	border: none
 	height: 18px
 	width: 18px
 	background: #07C88E
-
-
 
 .checkbox_wrapper
 	display: flex
@@ -49,6 +54,4 @@ input[type="checkbox"]
 
 .active_name
 	font-weight: 500
-
-
 

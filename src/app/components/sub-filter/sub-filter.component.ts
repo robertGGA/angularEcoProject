@@ -1,6 +1,7 @@
 import { Component, OnInit, ChangeDetectionStrategy, Input } from '@angular/core';
 
 export interface filterSettings {
+	group: string,
 	name: string,
 	id: string,
 	flag: boolean

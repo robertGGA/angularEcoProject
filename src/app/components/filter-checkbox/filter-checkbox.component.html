@@ -1,12 +1,13 @@
-<div class="checkboxWithName">
-	<label class="checkbox_wrapper">
-		<input type='checkbox'/>
-		<span class="checkbox checkbox_active">
-		<app-icon [height]='9'
-		          item='checkbox_svg'
-		          [width]='12'>
+<div class='checkboxWithName'>
+	<label class='checkbox_wrapper'>
+		<input type='checkbox'
+		       (change)='changeState()' />
+		<span class='checkbox {{(isChecked|async)?"checkbox-active":""}}'>
+			<app-icon [height]='10'
+			          item='checkbox_svg'
+			          [width]='12'>
 			</app-icon>
-			</span>
+		</span>
 	</label>
-	<p class="default_name disabledName">{{name}}</p>
+	<p class='default_name disabledName'>{{name}}</p>
 </div>

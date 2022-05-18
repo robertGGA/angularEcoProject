@@ -1,5 +1,71 @@
 <div class="filter__container">
-	<app-sub-filter name='Пол' [btnNames]="[{name:'Мужской',id:'man',flag:false},{name: 'Женский', id: 'women', flag: false}]"></app-sub-filter>
-	<app-sub-filter name='Тип товара' [btnNames]="[{name: 'Выбрать все', id: 'allWear', flag: false}, {name: 'Обувь', id: 'shoes', flag: false}, {name: 'Одежда', id: 'suit', flag: false}, {name: 'Аксессуары', id: 'accs', flag: false}]"></app-sub-filter>
-	<app-sub-filter name='Брэнд' [btnNames]="[{name: 'Выбрать все', id: 'allBrands', flag: false}, {name: 'Nike', id: 'nike', flag: false}, {name: 'Adidas', id: 'adidas', flag: false}, {name: 'Rebook', id: 'rebook', flag: false}, {name: 'P&W', id: 'pw', flag: false}, {name: 'Самарский трикотаж', id: 'samara', flag: false}]"></app-sub-filter>
+	<form [formGroup]='formGroup'>
+		<form formGroupName="genderGroup">
+			<div class=subfilter_container>
+				<h3>Пол</h3>
+				<app-filter-checkbox
+					formControlName='manCheckbox'
+					name='Мужчина'
+				></app-filter-checkbox>
+				<app-filter-checkbox
+					formControlName='womanCheckbox'
+					name='Женщина'
+				></app-filter-checkbox>
+			</div>
+		</form>
+		<form formArrayName="typeGroup">
+			<div class=subfilter_container>
+				<h3>Тип товара</h3>
+						<app-filter-checkbox
+							formControlName='selectAll'
+							name='Выбрать все'
+						></app-filter-checkbox>
+						<app-filter-checkbox
+							formControlName='shoes'
+							name='Обувь'
+						></app-filter-checkbox>
+						<app-filter-checkbox
+							formControlName='clothing'
+							name='Одежда'
+						></app-filter-checkbox>
+						<app-filter-checkbox
+							formControlName='accessories'
+							name='Аксессуары'
+						></app-filter-checkbox>
+			</div>
+		</form>
+		<form formGroupName="brandGroup">
+			<div class=subfilter_container>
+				<h3>Брэнд</h3>
+					<app-filter-checkbox
+						formControlName='selectAll'
+						name='Выбрать все'
+					></app-filter-checkbox>
+					<app-filter-checkbox
+						formControlName='nike'
+						name='Nike'
+					></app-filter-checkbox>
+					<app-filter-checkbox
+						formControlName='adidas'
+						name='Adidas'
+					></app-filter-checkbox>
+					<app-filter-checkbox
+						formControlName='puma'
+						name='Puma'
+					></app-filter-checkbox>
+					<app-filter-checkbox
+						formControlName='samaraJersey'
+						name='Самарский трикотаж'
+					></app-filter-checkbox>
+					<app-filter-checkbox
+						formControlName='rebook'
+						name='Rebook'
+					></app-filter-checkbox>
+					<app-filter-checkbox
+						formControlName='hm'
+						name='H&M'
+					></app-filter-checkbox>
+			</div>
+		</form>
+	</form>
 </div>
