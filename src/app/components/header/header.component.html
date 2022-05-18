@@ -21,7 +21,7 @@
 
 				<li class='navLink'>
 					<a
-						routerLink='/'
+						routerLink='/map'
 						routerLinkActive='active'
 						class='mainNavLink'
 					>
@@ -52,25 +52,35 @@
 			</ul>
 		</nav>
 
-		<ul class=navList>
+		<ul class='navList'>
 			<li class='navLink_city navLink'>
 				<div class='headerIcon'>
-					<app-icon [width]='24' [height]='24' [item]='"mapPointer"'>
+					<app-icon
+						[width]='24'
+						[height]='24'
+						[item]='"mapPointer"'
+					>
 					</app-icon>
 				</div>
 				Казань
 			</li>
-
-			<li class='navLink'>
-				<app-icon [width]='24' [height]='24' [item]='"login"'>
-				</app-icon>
-				<a
-					class='mainNavLink'
-					(click)='openLoginDialog()'
-				>
-					Войти
-				</a>
-			</li>
+			<ng-container
+				*ngIf='isAuth$ | async'>
+				<li class='navLink'>
+					<app-icon
+						[width]='24'
+						[height]='24'
+						[item]='"login"'
+					>
+					</app-icon>
+					<a
+						class='mainNavLink'
+						(click)='openLoginDialog()'
+					>
+						Войти
+					</a>
+				</li>
+			</ng-container>
 		</ul>
 	</header>
 </div>

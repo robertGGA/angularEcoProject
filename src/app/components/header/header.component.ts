@@ -1,6 +1,9 @@
-import { Component, OnInit, ChangeDetectionStrategy, Inject, Optional } from '@angular/core';
+import { Component, ChangeDetectionStrategy, Input, OnChanges, SimpleChanges, OnInit, Inject } from '@angular/core';
 import { DialogService } from '@services/dialog.service';
 import { LoginFormComponent } from '@components/login-form/login-form.component';
+import { AuthService } from '@services/auth.service';
+import { Observable, observable, of } from 'rxjs';
+
 
 
 @Component({
@@ -9,15 +12,20 @@ import { LoginFormComponent } from '@components/login-form/login-form.component'
 	styleUrls: ['./header.component.sass'],
 	changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent{
 
-	constructor(private dialog: DialogService) {
-	}
+	@Input() isAuth$ = of(!this.auth.isAuthorized);
 
-	ngOnInit(): void {
+	constructor(private dialog: DialogService, @Inject(AuthService) private auth: AuthService) {
+
 	}
 
 	openLoginDialog() {
-		this.dialog.openDialog(LoginFormComponent,{title: "Вход"})
+		this.dialog.openDialog(LoginFormComponent, { title: 'Вход' })
 	}
+
+
+
+
+
 }

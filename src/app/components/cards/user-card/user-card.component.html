@@ -1,12 +1,17 @@
 <div class='userCard'>
 	<div>
 		<div class='userAvatarContainer'>
-			<img src={avatar} alt="" class='userCardImg'/>
+			<img src='{avatar}'
+			     alt=''
+			     class='userCardImg' />
 		</div>
-		<h2>Иванов Иван</h2>
+		<h2 *ngIf='user.firstname == null && user.lastname == null; else elseBlock'>Ваше имя</h2>
+		<ng-template #elseBlock>
+			<h2>{{user.firstname}} {{user.lastname}}</h2>
+		</ng-template>
 		<div class='userInfo'>
-			<p>+7 (917) 888 88 88</p>
-			<p>"ivanov@gmail.com"</p>
+			<p>{{user.phone_number}}</p>
+			<p>{{user.email}}</p>
 		</div>
 		<button class='editBtn'>Редактировать</button>
 	</div>

@@ -1,3 +1,5 @@
+@import "src/assets/styles/mixins"
+
 .promoCodeImg
 	height: 100%
 	width: 100%
@@ -7,14 +9,20 @@
 	padding-bottom: 24px
 	display: flex
 	align-items: center
-
 	border-bottom: 1px #eaeaea solid
+
+	@include _700
+		flex-direction: column
+
 .promoCodeImgWrapper
 	height: 100%
 	width: 100%
 	max-width: 180px
-
 	margin-right: 24px
+
+	@include _700
+		max-width: 100%
+		margin: 0
 
 
 .infoList
@@ -26,6 +34,9 @@
 	padding: 7px 0
 	display: flex
 
+	@include _700
+		flex-direction: column
+
 .promoCodeCardInfo
 	line-height: 20px
 	margin-top: 2px
@@ -36,6 +47,7 @@
 
 .link
 	color: #07C88E
+
 	&:hover
 		color: #05916a
 
@@ -50,21 +62,14 @@
 	font-size: 14px
 	line-height: 20px
 	padding: 10px 20px
+
 	&:hover
 		cursor: pointer
 		background: rgba(52, 69, 91, 0.22)
 
-@media (max-width: 600px)
-	.promoCodeCard
-		flex-direction: column
-
-	.promoCodeCardInfoWrapper
-		flex-direction: column
-
-	.promoCodeImgWrapper
-		max-width: 100%
-		margin: 0
-
-
-	.promoCodeBtn
+	@include _700
 		width: 100%
+
+li:last-child
+	margin-top: 16px
+
