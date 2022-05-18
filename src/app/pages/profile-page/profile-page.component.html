@@ -2,9 +2,13 @@
 	<h1 class='profile_title'>Личный кабинет</h1>
 	<div class='mainContentWrapper'>
 		<div class='userCardWrapper'>
-			<app-user-card></app-user-card>
+			<app-user-card
+				[user]='user'
+			>
+
+			</app-user-card>
 		</div>
-		<app-card-list-switcher style='width: 100%'>
+		<app-card-list-switcher  style='width: 100%'>
 		</app-card-list-switcher>
 	</div>
 

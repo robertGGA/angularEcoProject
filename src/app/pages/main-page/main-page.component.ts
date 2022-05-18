@@ -8,17 +8,12 @@ import { ActivatedRoute } from '@angular/router';
 	changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class MainPageComponent implements OnInit {
-	@Input() first_image = './assets/images/market.svg'
-	isModalOpen: boolean = false;
-
+	first_image = './assets/images/market.svg'
 	constructor() {
 	}
 
 	ngOnInit(): void {
 	}
 
-	closeModal() {
-		this.isModalOpen = false;
-	}
 
 }

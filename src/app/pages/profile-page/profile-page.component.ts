@@ -1,4 +1,5 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { AuthService } from '@services/auth.service';
 
 @Component({
   selector: 'app-profile-page',
@@ -7,10 +8,15 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ProfilePageComponent implements OnInit {
+	user: any;
 
-  constructor() { }
+  constructor(private auth: AuthService) { }
 
   ngOnInit(): void {
+	  this.auth.getProfile().subscribe(res => {
+		  this.user = res;
+		  console.log(res);
+	  });
   }
 
 }

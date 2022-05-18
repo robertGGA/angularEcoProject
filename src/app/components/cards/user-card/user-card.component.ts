@@ -1,16 +1,26 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ChangeDetectionStrategy, Input } from '@angular/core';
 
 @Component({
-  selector: 'app-user-card',
-  templateUrl: './user-card.component.html',
-  styleUrls: ['./user-card.component.sass'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+	selector: 'app-user-card',
+	templateUrl: './user-card.component.html',
+	styleUrls: ['./user-card.component.sass'],
+	changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class UserCardComponent implements OnInit {
+export class UserCardComponent{
 
-  constructor() { }
+	@Input() user: {
+		email: string,
+		phone_number: string,
+		firstname: string,
+		lastname: string
+	};
 
-  ngOnInit(): void {
-  }
-
+	constructor() {
+		this.user = {
+			email: '',
+			phone_number: '',
+			firstname: '',
+			lastname: ''
+		}
+	}
 }
