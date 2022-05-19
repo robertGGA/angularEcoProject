@@ -1,4 +1,6 @@
 @use '/src/styles.sass' as gs
+@import "src/assets/styles/mixins.sass"
+
 .header-wrapper
 	height: 80px
 	box-shadow: 0px 0.5px 0px rgba(0, 0, 0, 0.12)
@@ -16,6 +18,9 @@
 	height: 80px
 	display: flex
 	justify-content: space-between
+
+	@include _700
+		padding: 0 16px
 
 .header-logo
 	margin-right: 49px

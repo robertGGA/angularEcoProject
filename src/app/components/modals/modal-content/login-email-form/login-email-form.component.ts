@@ -2,9 +2,9 @@ import { Component, OnInit, ChangeDetectionStrategy, Output, EventEmitter } from
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { DialogRef } from '@angular/cdk-experimental/dialog';
 import { DialogService } from '@services/dialog.service';
-import { RegFormComponent } from '@components/reg-form/reg-form.component';
+import { RegFormComponent } from '@components/modals/modal-content/reg-form/reg-form.component';
 import { CodeConfirmFormComponent } from '@components/code-confirm-form/code-confirm-form.component';
-import { PartnersLoginFromComponent } from '@components/partners-login-from/partners-login-from.component';
+import { PartnersLoginFromComponent } from '@components/modals/modal-containers/partners-login-from/partners-login-from.component';
 
 @Component({
 	selector: 'app-login-email-form',

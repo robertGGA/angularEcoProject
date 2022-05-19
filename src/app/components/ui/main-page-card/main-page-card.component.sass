@@ -1,9 +1,16 @@
+@import "src/assets/styles/mixins.sass"
+
 .navCard__wrapper
 	width: 100%
 	max-width: 588px
 
 	&:not(:last-child)
 		margin-right: 24px
+
+@include _700
+	.navCard__wrapper
+		margin-top: 16px
+
 
 .navCard
 	min-height: 300px

@@ -1,7 +1,7 @@
 import { Component, OnInit, ChangeDetectionStrategy, Output, EventEmitter } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { DialogService } from '@services/dialog.service';
-import { PartnersLoginFromComponent } from '@components/partners-login-from/partners-login-from.component';
+import { PartnersLoginFromComponent } from '@components/modals/modal-containers/partners-login-from/partners-login-from.component';
 
 @Component({
   selector: 'app-code-confirm-form',

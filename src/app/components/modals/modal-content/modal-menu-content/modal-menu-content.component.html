@@ -1,0 +1,47 @@
+<ul class='ul_links'>
+	<li>
+		<button class='link'
+		        (click)='openLoginModal()'>
+			Войти
+		</button>
+	</li>
+
+	<li>
+		<button class='link'
+		        (click)='openRegModal()'>
+			Регистрация
+		</button>
+	</li>
+
+	<li>
+		<a class='link'
+		   routerLink='/'
+		(click)='closeModal()'>
+			Главная
+		</a>
+	</li>
+
+	<li>
+		<a class='link'
+		   routerLink='/map'
+		   (click)='closeModal()'>
+			Пункты сбора
+		</a>
+	</li>
+
+	<li>
+		<a class='link'
+		   routerLink='/market'
+		   (click)='closeModal()'>
+			ЭкоМаркет
+		</a>
+	</li>
+
+	<li>
+		<a class='link'
+		   routerLink='/'
+		   (click)='closeModal()'>
+			О сервисе
+		</a>
+	</li>
+</ul>

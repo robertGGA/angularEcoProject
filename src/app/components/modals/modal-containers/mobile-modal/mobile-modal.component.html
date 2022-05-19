@@ -1,0 +1,25 @@
+<div class='menuModal__container'>
+	<div *ngIf='dialogTitle == ""'
+	     style='justify-content: right'
+	     class='modal__firstRow'>
+		<button class='modal__closeButton'
+		        [appDialogClose]>X
+		</button>
+	</div>
+
+	<div *ngIf='dialogTitle != ""'
+	     class='modal__firstRow'>
+		<button class='modal__closeButton'
+		        [appDialogClose]>
+			<app-icon [width]='24'
+			          [height]='24'
+			          [item]='"closeButton"'>
+
+			</app-icon>
+		</button>
+	</div>
+
+
+	<ng-template [cdkPortalOutlet]='portal'>
+	</ng-template>
+</div>

@@ -1,43 +1,38 @@
 import { Component, OnInit, ChangeDetectionStrategy, Output, EventEmitter } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { CodeConfirmFormComponent } from '@components/code-confirm-form/code-confirm-form.component';
 import { DialogRef } from '@angular/cdk-experimental/dialog';
 import { DialogService } from '@services/dialog.service';
-import { LoginFormComponent } from '@components/login-form/login-form.component';
-import { PartnersLoginFromComponent } from '@components/partners-login-from/partners-login-from.component';
-import { AuthService } from '@services/auth.service';
+import { RegFormComponent } from '@components/modals/modal-content/reg-form/reg-form.component';
+import { CodeConfirmFormComponent } from '@components/code-confirm-form/code-confirm-form.component';
+import { LoginFormComponent } from '@components/modals/modal-content/login-form/login-form.component';
+import { LoginEmailFormComponent } from '@components/modals/modal-content/login-email-form/login-email-form.component';
 
 @Component({
-	selector: 'app-reg-form',
-	templateUrl: './reg-form.component.html',
-	styleUrls: ['./reg-form.component.sass'],
+	selector: 'app-partners-login-from',
+	templateUrl: './partners-login-from.component.html',
+	styleUrls: ['./partners-login-from.component.sass'],
 	changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class RegFormComponent {
-
+export class PartnersLoginFromComponent {
 	formGroup: FormGroup;
 	@Output() closeModal: EventEmitter<any> = new EventEmitter<any>();
 
 	constructor(
 		public dialog: DialogService,
-		private formBuilder: FormBuilder,
-		private authService: AuthService,
+		private formBuilder: FormBuilder
 	) {
 		this.formGroup = this.formBuilder.group({
-			phone_number: ['', [
-				Validators.required,
-				Validators.maxLength(11)
-			]],
-			password: ['', [
-				Validators.required
-			]],
+			name: ['', Validators.required,
+				Validators.maxLength(64)],
 			email: ['', [
 				Validators.required,
-				Validators.email
-			]],
-			role: 'USER'
+				Validators.maxLength(64),
+				Validators.email]],
+			password: ['', [Validators.required,
+				Validators.maxLength(16)]]
 		})
 	}
+
 
 	validateControl(name: string, validateField: string) {
 		let control = this.formGroup.get(name);
@@ -53,15 +48,9 @@ export class RegFormComponent {
 		return this.formGroup.get(name)!;
 	}
 
-	onSubmit() {
+	onSubmit(phone: string, password: string) {
 		return () => {
-			console.log(this.formGroup.value);
-			this.authService.registration(this.formGroup.value).subscribe(res => {
-				console.log(res);
-				this.dialog.openLoginDialog();
-			}, err => {
-				console.log(err);
-			})
+			console.log(phone, password)
 		}
 	}
 

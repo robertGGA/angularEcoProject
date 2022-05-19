@@ -6,7 +6,7 @@ import { Component, OnInit, ChangeDetectionStrategy, Input } from '@angular/core
   styleUrls: ['./main-page-card.component.sass'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class MainPageCardComponent implements OnInit {
+export class MainPageCardComponent {
 	@Input() title: string
 	@Input() text: string
 	@Input() bgImg: string
@@ -17,9 +17,6 @@ export class MainPageCardComponent implements OnInit {
 		this.text = '';
 		this.bgImg = '';
 		this.link = '';
-  }
-
-  ngOnInit(): void {
   }
 
 }

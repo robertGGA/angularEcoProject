@@ -1,4 +1,13 @@
-import { Component, OnInit, ChangeDetectionStrategy, Output, EventEmitter, Optional, Inject } from '@angular/core';
+import {
+	Component,
+	OnInit,
+	ChangeDetectionStrategy,
+	Output,
+	EventEmitter,
+	Optional,
+	Inject,
+	ChangeDetectorRef
+} from '@angular/core';
 import { FormBuilder, FormGroup, Validator, Validators } from '@angular/forms';
 import { DIALOG_DATA, DialogRef } from '@angular/cdk-experimental/dialog';
 import { DialogService } from '@services/dialog.service';
@@ -16,12 +25,15 @@ import { DialogCloseDirective } from '@directives/dialog-close.directive';
 export class LoginFormComponent {
 
 	formGroup: FormGroup;
+	loginDialogRef: DialogRef<any>
 
 	constructor(
 		public dialog: DialogService,
 		private formBuilder: FormBuilder,
 		private authService: AuthService,
 		private route: Router,
+		private dialogRef: DialogRef<LoginFormComponent>,
+		private readonly cdRef: ChangeDetectorRef
 	) {
 		this.formGroup = this.formBuilder.group({
 			phone: ['', [
@@ -30,6 +42,7 @@ export class LoginFormComponent {
 			password: ['', [Validators.required,
 				Validators.maxLength(16)]]
 		})
+		this.loginDialogRef = dialogRef;
 	}
 
 	validateControl(name: string, validateField: string) {
@@ -53,6 +66,7 @@ export class LoginFormComponent {
 			this.authService.authorize({login, password}).subscribe(res => {
 				console.log(res.token)
 				this.authService.token = res.token;
+				this.dialogRef.close();
 				this.route.navigate(['/profile']);
 			}, err => {
 				console.log(err);
