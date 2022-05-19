@@ -65,7 +65,7 @@
 				Казань
 			</li>
 			<ng-container
-				*ngIf='isAuth$ | async'>
+				*ngIf='getAuth'>
 				<li class='navLink'>
 					<app-icon
 						[width]='24'
@@ -82,12 +82,12 @@
 				</li>
 			</ng-container>
 
-			<ng-container *ngIf='isAuth$ !== null'>
+			<ng-container *ngIf='!getAuth'>
 				<li class='navLink header_balance'>
 					<div class='headerIcon'>
 						<img src='./assets/images/img.png'
 						     width='24'
-						     height='24/'>
+						     height='24'/>
 					</div>
 					<p>0</p>
 				</li>
