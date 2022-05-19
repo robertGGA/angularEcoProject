@@ -4,6 +4,7 @@ import { LoginFormComponent } from '@components/modals/modal-content/login-form/
 import { DialogRef } from '@angular/cdk-experimental/dialog';
 import { RegFormComponent } from '@components/modals/modal-content/reg-form/reg-form.component';
 import { Router } from '@angular/router';
+import { AuthService } from '@services/auth.service';
 
 @Component({
 	selector: 'app-mobile-modal-content',
@@ -13,9 +14,11 @@ import { Router } from '@angular/router';
 })
 export class ModalMenuContentComponent implements OnInit {
 
+	user: any;
 	constructor(public dialogService: DialogService,
 				private dialogRef: DialogRef<ModalMenuContentComponent>,
-				private route: Router,) {
+				private route: Router,
+				private auth: AuthService) {
 	}
 
 	openLoginModal() {
@@ -33,6 +36,10 @@ export class ModalMenuContentComponent implements OnInit {
 	}
 
 	ngOnInit(): void {
+		this.auth.getProfile().subscribe(res => {
+			this.user = res;
+			console.log(res);
+		});
 	}
 
 }

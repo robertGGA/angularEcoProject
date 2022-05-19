@@ -1,22 +1,48 @@
-<ul class='ul_links'>
-	<li>
-		<button class='link'
-		        (click)='openLoginModal()'>
-			Войти
-		</button>
-	</li>
+<ng-container *ngIf='user !== null; else nonAuth'>
+	<div class='modal__profile_row'>
+		<img src='./assets/images/34Syn2ezKLM.jpeg'
+		     class='profile__image'/>
+		<div class='modal__profile_info'>
+			<p *ngIf='user.firstame != null && user.secondname != null; else defaultname'>
+				{{user.firtsname}}
+			</p>
+			<ng-template #defaultname>
+				<p>
+					Твое имя
+				</p>
+			</ng-template>
+			<div class='modal__balance'>
+				<img class='avatar' src='./assets/images/img.png'>
+				<p class='balance'>
+					0
+				</p>
+			</div>
+		</div>
+	</div>
+</ng-container>
 
-	<li>
-		<button class='link'
-		        (click)='openRegModal()'>
-			Регистрация
-		</button>
-	</li>
+
+<ul class='ul_links'>
+	<ng-template #nonAuth>
+		<li>
+			<button class='link'
+			        (click)='openLoginModal()'>
+				Войти
+			</button>
+		</li>
+
+		<li>
+			<button class='link'
+			        (click)='openRegModal()'>
+				Регистрация
+			</button>
+		</li>
+	</ng-template>
 
 	<li>
 		<a class='link'
 		   routerLink='/'
-		(click)='closeModal()'>
+		   (click)='closeModal()'>
 			Главная
 		</a>
 	</li>

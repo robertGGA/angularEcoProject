@@ -9,6 +9,7 @@
 
 	<div *ngIf='dialogTitle != ""'
 	     class='modal__firstRow'>
+		<h2 class='title'>{{dialogTitle}}</h2>
 		<button class='modal__closeButton'
 		        [appDialogClose]>
 			<app-icon [width]='24'

@@ -44,7 +44,8 @@ import { FilterCheckboxComponent } from '@components/filter-checkbox/filter-chec
 import { MapPageComponent } from '@pages/map-page/map-page.component';
 import { FilterModalContainerComponent } from '@components/filter-modal-container/filter-modal-container.component';
 import { MobileModalComponent } from '@components/modals/modal-containers/mobile-modal/mobile-modal.component';
-import { ModalMenuContentComponent } from './components/modals/modal-content/modal-menu-content/modal-menu-content.component';
+import { ModalMenuContentComponent } from '@components/modals/modal-content/modal-menu-content/modal-menu-content.component';
+import { FooterComponent } from '@components/footer/footer.component';
 
 
 @NgModule({
@@ -83,7 +84,8 @@ import { ModalMenuContentComponent } from './components/modals/modal-content/mod
 		MapPageComponent,
 		FilterModalContainerComponent,
 		MobileModalComponent,
-  ModalMenuContentComponent,
+		ModalMenuContentComponent,
+		FooterComponent,
 	],
 	imports: [
 		SwiperModule,
