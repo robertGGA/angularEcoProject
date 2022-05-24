@@ -1,18 +1,18 @@
-<div class='userCard'>
+<div class='user__card'>
 	<div>
-		<div class='userAvatarContainer'>
+		<div class='user__avatar_container'>
 			<img src='./assets/images/34Syn2ezKLM.jpeg'
-			     alt=''
-			     class='userCardImg' />
+			     alt='avatar'
+			     class='user__image' />
 		</div>
 		<h2 *ngIf='user.firstname == null && user.lastname == null; else elseBlock'>Ваше имя</h2>
 		<ng-template #elseBlock>
 			<h2>{{user.firstname}} {{user.lastname}}</h2>
 		</ng-template>
-		<div class='userInfo'>
+		<div class='user__info'>
 			<p>{{user.phone_number}}</p>
 			<p>{{user.email}}</p>
 		</div>
-		<button class='editBtn'>Редактировать</button>
+		<button class='button__edit'>Редактировать</button>
 	</div>
 </div>

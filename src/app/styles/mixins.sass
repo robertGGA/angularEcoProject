@@ -12,9 +12,17 @@
 	@media (max-width: 375px)
 		@content
 
+@mixin _795
+	@media (max-width: 795px)
+		@content
+
 @mixin modal-default-font-settings
 	font-weight: 400
 	font-size: 14px
+
+@mixin max-width
+	max-width: var.$max-width
+	width: 1200px
 
 
 @mixin button-example

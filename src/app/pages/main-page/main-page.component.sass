@@ -1,41 +1,43 @@
 @import "src/app/styles/mixins.sass"
 
-.mainCards__wrapper
-	margin: 0 auto
-	max-width: 1200px
-	width: 100%
-	margin-bottom: 108px
+.main_cards
 
-.navCards
+	&__wrapper
+		max-width: 1200px
+		width: 100%
+		margin: 0 auto 108px
+
+
+.nav_cards
 	display: flex
 	justify-content: space-between
 	max-width: 1200px
 	margin-top: 48px
 	width: 100%
 
-.navCardsWrapper
-	width: 100%
+	&__wrapper
+		width: 100%
 
-.modalCentered
-	width: 100%
-	height: 100%
-	display: flex
-	justify-content: center
-	align-items: center
+		@include _795
+			padding: 0
 
-
-
-@media screen and (max-width: 795px)
-	.navCards
+	@include _795
 		flex-direction: column
 		padding: 0 16px
 		position: relative
 		margin-top: 0
 		top: -100px
 		z-index: 1
-	.mainCards__wrapper
-		padding: 0
 
+
+.modal_centered
+	width: 100%
+	height: 100%
+	display: flex
+	justify-content: center
+	align-items: center
+
+@include _795
 	.card
 		display: flex
 		justify-content: center

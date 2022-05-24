@@ -1,6 +1,13 @@
 @import '~swiper/swiper.min.css'
 @import '~swiper/modules/navigation/navigation.min.css'
-.customSwiper
+@import "src/app/styles/mixins.sass"
+
+.custom_swiper
+	&__wrapper
+		position: relative
+
+
+	width: 100%
 	max-width: 100%
 	margin-top: 40px
 	text-align: left
@@ -9,63 +16,39 @@
 	min-height: 300px
 	height: 100%
 
-
-.customSwiperWrapper
-	position: relative
-	width: 100%
-
-
-@media screen and (max-width: 795px)
-	.customSwiper
+	@include _795
 		margin-top: 0
 
+.swiper
 
+	&-button
 
+		&__example
+			width: 44px
+			height: 44px
+			border-radius: 100%
+			box-shadow: 0px 4px 24px rgba(0, 11, 38, 0.12)
+			display: flex
+			align-items: center
+			justify-content: center
+			z-index: 2
 
+			@include _795
+				display: none
 
+		&-next
+			background: #FFFFFF url("~src/assets/images/rightArrow.png") no-repeat 50%
+			right: -22px
+			@extend .swiper-button__example
 
-.swiper-button-next
-	width: 44px
-	height: 44px
+			&:after
+				display: none
 
-	border-radius: 100%
-	box-shadow: 0px 4px 24px rgba(0, 11, 38, 0.12)
+		&-prev
+			background: #FFFFFF url("~src/assets/images/leftArrow.png") no-repeat 50%
+			left: -22px
+			@extend .swiper-button__example
 
-	background: #FFFFFF url("~src/assets/images/rightArrow.png") no-repeat 50%
-
-	display: flex
-	align-items: center
-	justify-content: center
-
-	right: -22px
-	z-index: 2
-
-
-.swiper-button-next::after
-	display: none
-
-
-.swiper-button-prev
-	width: 44px
-	height: 44px
-
-	border-radius: 100%
-	box-shadow: 0px 4px 24px rgba(0, 11, 38, 0.12)
-
-	background: #FFFFFF url("~src/assets/images/leftArrow.png") no-repeat 50%
-
-	display: flex
-	align-items: center
-	justify-content: center
-
-	left: -22px
-	z-index: 2
-
-
-.swiper-button-prev::after
-	display: none
-
-@media screen and (max-width: 795px)
-	.swiper-button-next,.swiper-button-prev
-		display: none
+			&:after
+				display: none
 

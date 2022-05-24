@@ -1,40 +1,48 @@
 @import "src/app/styles/mixins.sass"
 
-.profile_container
-	width: 100%
-	max-width: 1200px
-	margin: 0 auto
+.profile
 
-	@include _700
-		max-width: 343px
-
-.profile_title
-	font-weight: 600
-	font-size: 40px
-	margin: 40px 0
-
-.main_content__wrapper
-	display: flex
-
-	@include _700
-		flex-direction: column
-
-.userCardWrapper
-	max-width: 384px
-	width: 100%
-	margin-right: 48px
-
-	@include _700
+	&__container
+		width: 100%
+		max-width: 1200px
 		margin: 0 auto
 
+		@include _700
+			max-width: 343px
 
-.infoCardsList
-	list-style: none
-	padding: 0
-	max-width: 768px
-	width: 100%
-	& .infoCardItem:not(:last-child)
-		margin-bottom: 16px
+
+	&__title
+		font-weight: 600
+		font-size: 40px
+		margin: 40px 0
+
+.main
+
+	&__wrapper
+		display: flex
+
+		@include _700
+			flex-direction: column
+
+.card
+
+	&__wrapper
+		max-width: 384px
+		width: 100%
+		margin-right: 48px
+
+		@include _700
+			margin: 0 auto
+
+
+	&__list
+		list-style: none
+		padding: 0
+		max-width: 768px
+		width: 100%
+
+	&__switcher
+		width: 100%
 
 
 

@@ -1,6 +1,6 @@
 @import "src/app/styles/mixins.sass"
 
-.historyCard
+.history_card
 	max-width: 768px
 	width: 100%
 
@@ -9,6 +9,15 @@
 	border: 1px solid rgba(62, 80, 114, 0.16)
 	box-sizing: border-box
 	border-radius: 20px
+
+	&__info
+		line-height: 20px
+		margin-top: 2px
+
+		@include _700
+			margin: 0 auto
+			margin-bottom: 40px
+			max-width: 343px
 
 .infoList
 	list-style: none
@@ -20,16 +29,7 @@ label
 	line-height: 18px
 	color: rgba(0, 11, 38, 0.4)
 
-.historyCardInfo
-	line-height: 20px
-	margin-top: 2px
-
-	@include _700
-		margin: 0 auto
-		margin-bottom: 40px
-		max-width: 343px
-
-.materialsList
+.materials_list
 	list-style-type: disc
 	display: flex
 	padding: 0
@@ -37,15 +37,14 @@ label
 	@include _700
 		flex-wrap: wrap
 
-.materialsListElement
-	margin-right: 30px
+	&__element
+		margin-right: 30px
 
-	&::marker
-		color: rgba(62, 80, 114, 0.24)
+		&::marker
+			color: rgba(62, 80, 114, 0.24)
 
-	&:first-child
-		list-style: none
-
+		&:first-child
+			list-style: none
 
 
 
