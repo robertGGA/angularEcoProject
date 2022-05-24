@@ -9,13 +9,10 @@ import { FilterComponent } from '@components/filter/filter.component';
 	changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class MarketPageComponent {
-	private _dialogService: DialogService;
-
-	constructor(dialogService: DialogService) {
-		this._dialogService = dialogService;
+	constructor(private dialogService: DialogService) {
 	}
 
 	openFiltersDialog() {
-		this._dialogService.openFilterDialog(FilterComponent)
+		this.dialogService.openFilterDialog(FilterComponent)
 	}
 }

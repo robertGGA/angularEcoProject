@@ -6,8 +6,8 @@
 		[formGroup]='formGroup'>
 		<input
 			formControlName='code'
-			class='formInput'
-			[class.errorFormInput]='isControlValid("code")'
+			class='form__input'
+			[class.error_form_input]='isControlValid("code")'
 			placeholder='Код'>
 		<ng-container *ngIf='validateControl("code","required")'>
 			<app-form-error-message validationMessage='Это поле обязательно'></app-form-error-message>
@@ -15,7 +15,7 @@
 		<ng-container *ngIf='validateControl("code","maxlength")'>
 			<app-form-error-message validationMessage='Максимальная длина превышена'></app-form-error-message>
 		</ng-container>
-		<div class='loginBtn' (click)='isSubmitted = true'>
+		<div class='login__btn' (click)='isSubmitted = true'>
 			<app-button
 				[isLarge]='true'
 				[isPrimary]='true'
@@ -27,7 +27,7 @@
 				Не получил(-а) код
 			</button>
 		</div>
-		<div class='loginBtn' (click)='this.dialog.openPartnersLoginDialog()'>
+		<div class='login__btn' (click)='this.dialog.openPartnersLoginDialog()'>
 			<app-button
 				value='Вход для партнёров'
 				[isLarge]='true'

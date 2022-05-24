@@ -3,8 +3,8 @@
 >
 	<input
 		formControlName='phone'
-		class='formInput'
-		[class.errorFormInput]='isControlValid("phone")'
+		class='form__input'
+		[class.error_form_input]='isControlValid("phone")'
 		placeholder='Телефон'
 	>
 	<ng-container *ngIf='validateControl("phone","required")'>
@@ -15,8 +15,8 @@
 	</ng-container>
 	<input
 		formControlName='password'
-		class='formInput'
-		[class.errorFormInput]='isControlValid("password")'
+		class='form__input'
+		[class.error_form_input]='isControlValid("password")'
 		placeholder='Пароль'
 		type='password'
 	>
@@ -26,7 +26,7 @@
 	<ng-container *ngIf='validateControl("password","maxlength")'>
 		<app-form-error-message validationMessage='Максимальная длина превышена'></app-form-error-message>
 	</ng-container>
-	<div class='loginBtn'>
+	<div class='login__btn'>
 		<app-button
 			[isLarge]='true'
 			[isPrimary]='true'
@@ -42,7 +42,7 @@
 			Регистрация
 		</button>
 	</div>
-	<div class='loginBtn'>
+	<div class='login__btn'>
 		<app-button
 			value='Вход для партнёров'
 			[isLarge]='true'

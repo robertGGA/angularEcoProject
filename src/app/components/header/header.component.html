@@ -3,7 +3,7 @@
 		<nav class='navPanel'>
 			<div class='header-logo'>
 				<object
-					data='./assets/images/logo.svg'
+					data='/assets/images/logo.svg'
 					type=''
 				></object>
 			</div>
@@ -66,7 +66,9 @@
 			</li>
 			<ng-container
 				*ngIf='!auth.isAuthorized'>
-				<li class='navLink'>
+				<li class='navLink'
+				    (click)='openLoginDialog()'
+				>
 					<app-icon
 						[width]='24'
 						[height]='24'
@@ -75,7 +77,6 @@
 					</app-icon>
 					<a
 						class='mainNavLink'
-						(click)='openLoginDialog()'
 					>
 						Войти
 					</a>
@@ -85,7 +86,7 @@
 			<ng-container *ngIf='auth.isAuthorized'>
 				<li class='navLink header_balance'>
 					<div class='headerIcon'>
-						<img src='./assets/images/img.png'
+						<img src='/assets/images/img.png'
 						     width='24'
 						     height='24' />
 					</div>
@@ -96,7 +97,7 @@
 				<a routerLink='/profile/promocode'
 				   class='navLink'>
 					<div class='headerIcon'>
-						<img src='./assets/images/34Syn2ezKLM.jpeg'
+						<img src='/assets/images/34Syn2ezKLM.jpeg'
 						     class='photo_header' />
 					</div>
 					<p></p>

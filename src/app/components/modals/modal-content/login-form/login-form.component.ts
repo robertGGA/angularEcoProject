@@ -1,20 +1,14 @@
 import {
 	Component,
-	OnInit,
 	ChangeDetectionStrategy,
-	Output,
-	EventEmitter,
-	Optional,
-	Inject,
 	ChangeDetectorRef
 } from '@angular/core';
-import { FormBuilder, FormGroup, Validator, Validators } from '@angular/forms';
-import { DIALOG_DATA, DialogRef } from '@angular/cdk-experimental/dialog';
+import { FormBuilder, FormGroup,  Validators } from '@angular/forms';
+import {  DialogRef } from '@angular/cdk-experimental/dialog';
 import { DialogService } from '@services/dialog.service';
 import { AuthService } from '@services/auth.service';
 
-import { ActivatedRoute, Router } from '@angular/router';
-import { DialogCloseDirective } from '@directives/dialog-close.directive';
+import {  Router } from '@angular/router';
 
 @Component({
 	selector: 'app-login-form',

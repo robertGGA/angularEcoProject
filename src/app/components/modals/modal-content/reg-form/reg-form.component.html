@@ -3,8 +3,8 @@
 >
 	<input
 		formControlName='phone_number'
-		class='formInput'
-		[class.errorFormInput]='isControlValid("phone_number")'
+		class='form__input'
+		[class.error_form_input]='isControlValid("phone_number")'
 		placeholder='Телефон'
 	>
 	<ng-container *ngIf='validateControl("phone_number","required")'>
@@ -16,8 +16,8 @@
 
 	<input
 		formControlName='password'
-		class='formInput'
-		[class.errorFormInput]='isControlValid("password")'
+		class='form__input'
+		[class.error_form_input]='isControlValid("password")'
 		placeholder='Пароль'
 	>
 	<ng-container *ngIf='validateControl("password","required")'>
@@ -26,8 +26,8 @@
 
 	<input
 		formControlName='email'
-		class='formInput'
-		[class.errorFormInput]='isControlValid("email")'
+		class='form__input'
+		[class.error_form_input]='isControlValid("email")'
 		placeholder='Email'
 	>
 	<ng-container *ngIf='validateControl("email","required")'>
@@ -37,7 +37,7 @@
 		<app-form-error-message validationMessage='Неправильный формат почты'></app-form-error-message>
 	</ng-container>
 
-	<div class='loginBtn'>
+	<div class='login__btn'>
 		<app-button
 			[isLarge]='true'
 			[isPrimary]='true'
@@ -51,7 +51,7 @@
 		</button>
 	</div>
 	<div
-		class='loginBtn'
+		class='login__btn'
 		(click)='this.dialog.openPartnersLoginDialog()'
 	>
 		<app-button

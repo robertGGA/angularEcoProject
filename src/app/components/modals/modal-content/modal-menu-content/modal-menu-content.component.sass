@@ -18,17 +18,20 @@
 	margin-top: 32px
 	border: none
 	background: none
+	&:hover
+		opacity: 0.7
 
-.link:hover
-	opacity: 0.7
-
-.modal__profile_row
-	display: flex
-	align-items: center
-
-.modal__profile_info
-	display: flex
-	flex-direction: column
+.modal
+	&__profile
+		&_row
+			display: flex
+			align-items: center
+		&_info
+			display: flex
+			flex-direction: column
+	&__balance
+		display: flex
+		align-items: center
 
 .profile__image
 	width: 64px
@@ -36,14 +39,9 @@
 	margin-right: 12px
 	border-radius: 50%
 
-.modal__balance
-	display: flex
-	align-items: center
-
 .balance
 	margin-left: 8px
 	font-weight: 600
-
 
 .avatar
 	width: 24px
