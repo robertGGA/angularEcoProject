@@ -1,49 +1,49 @@
-<div class='header-wrapper'>
+<div class='header_wrapper'>
 	<header class='header'>
-		<nav class='navPanel'>
-			<div class='header-logo'>
+		<nav class='nav__panel'>
+			<div class='header__logo'>
 				<object
-					data='/assets/images/logo.svg'
+					data='./assets/images/logo.svg'
 					type=''
 				></object>
 			</div>
 
-			<ul class='navList'>
-				<li class='navLink'>
+			<ul class='nav__list'>
+				<li class='nav__link'>
 					<a
 						routerLink='/'
 						routerLinkActive='active'
-						class='mainNavLink'
+						class='main_nav__link'
 					>
 						Главная
 					</a>
 				</li>
 
-				<li class='navLink'>
+				<li class='nav__link'>
 					<a
 						routerLink='/map'
 						routerLinkActive='active'
-						class='mainNavLink'
+						class='main_nav__link'
 					>
 						Пункты сбора
 					</a>
 				</li>
 
-				<li class='navLink'>
+				<li class='nav__link'>
 					<a
 						routerLink='/market'
 						routerLinkActive='active'
-						class='mainNavLink'
+						class='main_nav__link'
 					>
 						Экомаркет
 					</a>
 				</li>
 
-				<li class='navLink'>
+				<li class='nav__link'>
 					<a
 						routerLink='/'
 						routerLinkActive='active'
-						class='mainNavLink'
+						class='main_nav__link'
 					>
 						О сервисе
 					</a>
@@ -52,9 +52,9 @@
 			</ul>
 		</nav>
 
-		<ul class='navList'>
-			<li class='navLink_city navLink'>
-				<div class='headerIcon'>
+		<ul class='nav__list'>
+			<li class='nav__link_city nav__link'>
+				<div class='header__icon'>
 					<app-icon
 						[width]='24'
 						[height]='24'
@@ -66,7 +66,7 @@
 			</li>
 			<ng-container
 				*ngIf='!auth.isAuthorized'>
-				<li class='navLink'
+				<li class='nav__link'
 				    (click)='openLoginDialog()'
 				>
 					<app-icon
@@ -76,7 +76,7 @@
 					>
 					</app-icon>
 					<a
-						class='mainNavLink'
+						class='main_nav__link'
 					>
 						Войти
 					</a>
@@ -84,9 +84,9 @@
 			</ng-container>
 
 			<ng-container *ngIf='auth.isAuthorized'>
-				<li class='navLink header_balance'>
-					<div class='headerIcon'>
-						<img src='/assets/images/img.png'
+				<li class='nav__link header__balance'>
+					<div class='header__icon'>
+						<img src='./assets/images/img.png'
 						     width='24'
 						     height='24' />
 					</div>
@@ -95,10 +95,10 @@
 				</li>
 
 				<a routerLink='/profile/promocode'
-				   class='navLink'>
-					<div class='headerIcon'>
-						<img src='/assets/images/34Syn2ezKLM.jpeg'
-						     class='photo_header' />
+				   class='nav__link'>
+					<div class='header__icon'>
+						<img src='./assets/images/34Syn2ezKLM.jpeg'
+						     class='header__photo' />
 					</div>
 					<p></p>
 				</a>
@@ -109,7 +109,7 @@
 			</ng-container>
 
 		</ul>
-		<div class='navLink header_balance header_mobile_auth'>
+		<div class='nav__link header__balance header__mobile_auth'>
 			<button class='burgerMenu'
 			        (click)='openBurgerMenu()'>
 				<app-icon [item]='"burger"'

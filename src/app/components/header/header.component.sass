@@ -1,16 +1,6 @@
 @use '/src/styles.sass' as gs
 @import "src/app/styles/mixins.sass"
 
-.header-wrapper
-	height: 80px
-	box-shadow: 0px 0.5px 0px rgba(0, 0, 0, 0.12)
-	font-weight: normal
-	font-size: 14px
-	line-height: 18px
-	letter-spacing: -0.15px
-
-
-	color: rgba(0, 11, 38, 0.64)
 
 .header
 	max-width: 1200px
@@ -22,63 +12,91 @@
 	@include _700
 		padding: 0 16px
 
-.header-logo
-	margin-right: 49px
-
-.navList
-	display: flex
-	height: 100%
-	margin: 0
-	list-style: none
-	color: rgba(0, 11, 38, 0.8)
-	align-items: center
-
-.navPanel
-	display: flex
-	align-items: center
-
-	.navList
+	&_wrapper
+		height: 80px
+		box-shadow: 0px 0.5px 0px rgba(0, 0, 0, 0.12)
+		font-weight: normal
+		font-size: 14px
+		line-height: 18px
+		letter-spacing: -0.15px
 		color: rgba(0, 11, 38, 0.64)
 
-.mainNavLink
-	@include gs.mainNavLink
+	&__logo
+		margin-right: 49px
 
-.mainNavLinkActive
-	@include gs.mainNavLinkActive
-	border-bottom: 3px #07C88E solid
+.nav
+	&__list
+		display: flex
+		height: 100%
+		margin: 0
+		list-style: none
+		color: rgba(0, 11, 38, 0.8)
+		align-items: center
+
+	&__panel
+		display: flex
+		align-items: center
+
+		.nav__list
+			color: rgba(0, 11, 38, 0.64)
+
+	&__link
+		display: flex
+		align-items: center
+		height: 100%
+
+		&:hover
+			cursor: pointer
+			color: #282c34
+
+		&:not(:last-child)
+			margin-right: 24px
+
+			@include _900
+				margin-right: 24px
+
+		&_city
+			margin-right: 48px !important
+
+		&-active
+			height: 100%
+			color: rgba(0, 11, 38, 1)
+			font-weight: 500
 
 
-.navLink
-	display: flex
-	align-items: center
-	height: 100%
 
-	&:hover
-		cursor: pointer
-		color: #282c34
 
-.headerIcon
-	display: flex
-	align-items: center
-	margin-right: 8px
 
-.navLink:not(:last-child)
-	margin-right: 24px
+	&__links
+		display: flex
 
-.navLink_city
-	margin-right: 48px !important
 
-.navLinks
-	display: flex
+.main_nav
+	&__link
+		@include mainNavLink
 
-.header_balance
-	font-weight: 600
+		&-active
+			@include mainNavLinkActive
+			border-bottom: 3px #07C88E solid
 
-.photo_header
-	height: 24px
-	width: 24px
-	border-radius: 50%
-	border: none
+.header
+	&__icon
+		display: flex
+		align-items: center
+		margin-right: 8px
+
+	&__balance
+		font-weight: 600
+
+	&__photo
+		height: 24px
+		width: 24px
+		border-radius: 50%
+		border: none
+
+	&__mobile_auth
+		display: none
+
 
 a
 	color: rgba(0, 11, 38, 0.64)
@@ -86,14 +104,6 @@ a
 a:hover
 	color: rgba(0, 11, 38, 1)
 
-.header_mobile_auth
-	display: none
-
-
-.activeNavLink
-	height: 100%
-	color: rgba(0, 11, 38, 1)
-	font-weight: 500
 
 .burgerMenu
 	background: none
