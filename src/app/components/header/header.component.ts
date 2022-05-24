@@ -28,7 +28,7 @@ export class HeaderComponent implements OnInit{
 	@Input() auth$ = of(!this.auth.isAuthorized);
 	isAuth: boolean = false;
 
-	constructor(public dialog: DialogService, @Inject(AuthService) private auth: AuthService, private readonly cdRef: ChangeDetectorRef) {
+	constructor(public dialog: DialogService, public auth: AuthService, private readonly cdRef: ChangeDetectorRef) {
 
 	}
 
@@ -38,12 +38,6 @@ export class HeaderComponent implements OnInit{
 
 	openBurgerMenu() {
 		this.dialog.openMobileModal(ModalMenuContentComponent, { title: '' })
-	}
-
-	getAuth() {
-		this.auth$.subscribe(i => {
-			this.isAuth = i;
-		})
 	}
 
 	ngOnInit(): void {

@@ -41,7 +41,7 @@
 		<app-button
 			[isLarge]='true'
 			[isPrimary]='true'
-			[submitFunc]='onSubmit()'
+			(submitFunc)='onSubmit()'
 			value='Зарегистрироваться'
 		></app-button>
 	</div>
@@ -58,7 +58,7 @@
 			value='Вход для партнёров'
 			[isLarge]='true'
 			[isPrimary]='false'
-			[submitFunc]='onSubmit'
+			(submitFunc)='onSubmit'
 		>
 		</app-button>
 	</div>

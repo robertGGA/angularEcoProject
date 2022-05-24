@@ -2,6 +2,6 @@
 	class='defaultBtn'
 	[class.largeBtn]='isLarge'
 	[class.primaryBtn]='isPrimary'
-	(click)='submitFunc()'>
+	(click)='submitFunc.emit()'>
 	{{value}}
 </button>

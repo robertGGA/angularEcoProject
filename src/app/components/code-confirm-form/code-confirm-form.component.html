@@ -19,7 +19,7 @@
 			<app-button
 				[isLarge]='true'
 				[isPrimary]='true'
-				[submitFunc]='onSubmit("phone","password")'
+				(submitFunc)='onSubmit("phone","password")'
 				value='Отправить'></app-button>
 		</div>
 		<div class='modal__underLinks'>
@@ -32,7 +32,7 @@
 				value='Вход для партнёров'
 				[isLarge]='true'
 				[isPrimary]='false'
-				[submitFunc]='onSubmit'>
+				(submitFunc)='onSubmit'>
 			</app-button>
 		</div>
 	</form>

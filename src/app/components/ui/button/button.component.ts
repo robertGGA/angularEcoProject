@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectionStrategy, Input } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
 	selector: 'app-button',
@@ -10,7 +10,7 @@ export class ButtonComponent {
 
 	@Input() isLarge: boolean
 	@Input() isPrimary: boolean
-	@Input() submitFunc: any
+	@Output() submitFunc = new EventEmitter();
 	@Input() value: string
 
 	constructor() {
