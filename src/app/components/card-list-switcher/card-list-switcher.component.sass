@@ -16,17 +16,16 @@
 			margin: 24px auto
 			max-width: 343px
 
-.switch
-
-	&__btn
-		@include mainNavLink
-		font-size: 20px
-		&:not(:last-child)
-			margin-right: 24px
-
-		&_active
-			@include mainNavLinkActive
+		a
+			@include mainNavLink
 			font-size: 20px
-			&:not(:last-child)
-				margin-right: 24px
+
+
+.active
+	@include mainNavLinkActive
+	font-size: 20px
+	&:first-child
+		margin-right: 24px
+	&:last-child
+		margin-left: 24px
 

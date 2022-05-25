@@ -2,12 +2,16 @@
 	<div class='switcher__nav'>
 		<a routerLink="/profile/promocode"
 			class='switch__btn'
+            routerLinkActive='active'
+           [routerLinkActiveOptions]={exact:true}
 		>
 			Промокоды
 		</a>
 		<a
 			routerLink="/profile/history"
 			class='switch__btn'
+			routerLinkActive='active'
+			[routerLinkActiveOptions]={exact:true}
 		>
 			История
 		</a>

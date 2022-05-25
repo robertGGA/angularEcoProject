@@ -13,7 +13,7 @@
 					<a
 						routerLink='/'
 						routerLinkActive='active'
-						class='main_nav__link'
+						[routerLinkActiveOptions]="{exact:true}"
 					>
 						Главная
 					</a>
@@ -23,7 +23,7 @@
 					<a
 						routerLink='/map'
 						routerLinkActive='active'
-						class='main_nav__link'
+						[routerLinkActiveOptions]="{exact:true}"
 					>
 						Пункты сбора
 					</a>
@@ -33,7 +33,7 @@
 					<a
 						routerLink='/market'
 						routerLinkActive='active'
-						class='main_nav__link'
+						[routerLinkActiveOptions]="{exact:true}"
 					>
 						Экомаркет
 					</a>
@@ -43,7 +43,7 @@
 					<a
 						routerLink='/'
 						routerLinkActive='active'
-						class='main_nav__link'
+						[routerLinkActiveOptions]="{exact:true}"
 					>
 						О сервисе
 					</a>
@@ -102,10 +102,6 @@
 					</div>
 					<p></p>
 				</a>
-
-				<button>
-					Выход
-				</button>
 			</ng-container>
 
 		</ul>

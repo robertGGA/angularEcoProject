@@ -33,12 +33,17 @@
 		color: rgba(0, 11, 38, 0.8)
 		align-items: center
 
+		@include _700
+			display: none
+
 	&__panel
 		display: flex
 		align-items: center
 
 		.nav__list
 			color: rgba(0, 11, 38, 0.64)
+
+
 
 	&__link
 		display: flex
@@ -72,12 +77,9 @@
 
 
 .main_nav
-	&__link
+	a
 		@include mainNavLink
 
-		&-active
-			@include mainNavLinkActive
-			border-bottom: 3px #07C88E solid
 
 .header
 	&__icon
@@ -96,6 +98,9 @@
 
 	&__mobile_auth
 		display: none
+
+		@include _700
+			display: flex
 
 
 a
@@ -139,3 +144,10 @@ a:hover
 
 	.photo_header
 		margin-left: 24px
+
+.active
+	height: 100%
+	color: rgba(0, 11, 38, 1)
+	font-weight: 500
+	@include mainNavLinkActive
+	border-bottom: 3px #07C88E solid

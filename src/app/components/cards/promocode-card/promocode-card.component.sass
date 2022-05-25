@@ -13,15 +13,18 @@
 		align-items: center
 		border-bottom: 1px #eaeaea solid
 
-		&__info
+		@include _700
+			flex-direction: column
+
+		&_info
 			line-height: 20px
 			margin-top: 2px
 
 			&__link
-				@extend .promo_code__card__info
+				@extend .promo_code__card_info
 				word-break: break-word
 
-			&__wrapper
+			&_wrapper
 				padding: 7px 0
 				display: flex
 
@@ -38,6 +41,7 @@
 		font-size: 14px
 		line-height: 20px
 		padding: 10px 20px
+		max-height: 40px
 
 		&:hover
 			cursor: pointer
@@ -46,8 +50,10 @@
 		@include _700
 			width: 100%
 
-		&__wrapper
+		&_wrapper
 			width: 100%
+			display: flex
+			justify-content: right
 
 	&__img_wrapper
 		height: 100%
@@ -64,6 +70,13 @@
 	list-style: none
 	padding-left: 0
 	margin-top: 0
+
+	label
+		color: $label-color
+
+	@include _700
+		margin-top: 18px
+		margin-bottom: 12px
 
 .link
 	color: $button-success
