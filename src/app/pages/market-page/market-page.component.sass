@@ -1,5 +1,10 @@
 @import "src/app/styles/mixins.sass"
+@import "src/app/styles/varibles.sass"
 
+$filter-active: rgb(6, 14, 33)
+$filter-active-hover: rgb(1, 1, 7)
+$balance_card-shadow-blue: rgb(21, 45, 103)
+$balance_card-shadow-light-blue: rgb(121,121,121)
 .market
 	&_wrapper
 		padding-top: 40px
@@ -13,20 +18,19 @@
 		display: flex
 		justify-content: space-between
 
-
 .filter_chips
 	line-height: 20px
 	padding: 10px 20px
 
-	color: rgba(0, 11, 38, 0.8)
-	background: rgba(62, 80, 114, 0.08)
+	color: rgba($label-color, 0.8)
+	background: rgba($button-secondary-blue, 0.08)
 
 	border: 0px
 	border-radius: 61px
 
 	&:hover
 		cursor: pointer
-		background: rgba(0, 0, 0, 0.08)
+		background: rgba($black, 0.08)
 
 	&:not(:last-child)
 		margin-right: 12px
@@ -37,11 +41,11 @@
 
 	&-active
 		@extend .filter_chips
-		background: rgba(6, 14, 33, 0.88)
+		background: rgba($filter-active, 0.88)
 		color: white
 
 		&:hover
-			background: rgba(1, 1, 7, 0.88)
+			background: rgba($filter-active-hover, 0.88)
 
 .main_content
 	&_wrapper
@@ -62,8 +66,8 @@
 	font-weight: 500
 	font-size: 16px
 	width: 100%
-	color: rgba(0, 11, 38, 0.8)
-	background: rgba(62, 80, 114, 0.08)
+	color: rgba($label-color, 0.8)
+	background: rgba($button-secondary-blue, 0.08)
 	border-radius: 8px
 	border: none
 	padding: 12px 30px
@@ -72,7 +76,7 @@
 		display: none
 
 		&:hover
-			background-color: rgba(62, 80, 114, 0.30)
+			background-color: rgba($button-secondary-blue, 0.30)
 
 .products_table
 	display: grid
@@ -105,12 +109,12 @@
 
 	text-align: center
 
-	color: rgba(0, 11, 38, 0.56)
+	color: rgba($label-color, 0.56)
 
-	border: 1px solid rgba(62, 80, 114, 0.12)
+	border: 1px solid rgba($button-secondary-blue, 0.12)
 	border-radius: 16px
 
-	box-shadow: 0px 12px 32px rgba(121, 121, 121, 0.12), 0px 4px 24px rgba(21, 45, 103, 0.12)
+	box-shadow: 0px 12px 32px rgba($balance_card-shadow-light-blue 0.12), 0px 4px 24px rgba($balance_card-shadow-blue, 0.12)
 
 	&__title
 		margin-top: 130.5px

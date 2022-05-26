@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700&display=swap')
 @import "~@angular/cdk/overlay-prebuilt.css"
 @import url('https://unpkg.com/leaflet@1.8.0/dist/leaflet.css')
+@import "src/app/styles/varibles.sass"
 
 *
 	margin: 0
@@ -35,18 +36,18 @@ $button-success-hover: rgb(0, 150, 106)
 	font-size: 14px
 	line-height: 18px
 	letter-spacing: -0.15px
-	color: rgba(0, 11, 38, 0.64)
+	color: rgba($label-color, 0.64)
 
 @mixin mainNavLinkActive
 	@include mainNavLink
 	height: 100%
 	display: grid
 
-	color: rgb(0, 11, 38)
+	color: rgb($label-color)
 	border-bottom: 2px solid rgb(15, 141, 106)
 	align-content: center
 
 	&:hover
-		color: rgb(0, 11, 38)
+		color: rgb($label-color)
 
 

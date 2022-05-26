@@ -67,7 +67,6 @@ export class DialogService {
 		this.openMobileModal(ModalMenuContentComponent);
 	}
 
-
 	openRegDialog() {
 		this.openAuthDialog(RegFormComponent, { title: 'Вход или регистрация' });
 	}

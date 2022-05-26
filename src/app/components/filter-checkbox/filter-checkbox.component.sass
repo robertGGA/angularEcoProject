@@ -1,3 +1,4 @@
+@import "src/app/styles/varibles.sass"
 input[type="checkbox"]
 	clip: rect(0 0 0 0)
 	clip-path: inset(50%)
@@ -25,7 +26,7 @@ input[type="checkbox"]
 	background: none
 	border-radius: 4px
 	box-sizing: content-box
-	border: 2px solid rgba(0, 11, 38, 0.4)
+	border: 2px solid rgba($label-color, 0.4)
 
 	&:hover
 		cursor: pointer
@@ -46,7 +47,7 @@ input[type="checkbox"]
 	display: flex
 
 .default_name
-	color: rgba(0, 11, 38, 0.72)
+	color: rgba($label-color, 0.72)
 	font-weight: 400
 	width: 100%
 

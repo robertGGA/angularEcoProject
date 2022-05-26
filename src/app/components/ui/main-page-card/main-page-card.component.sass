@@ -1,5 +1,5 @@
 @import "src/app/styles/mixins.sass"
-
+@import "src/app/styles/varibles.sass"
 
 .nav_card
 	min-height: 300px
@@ -37,7 +37,7 @@
 
 	&__text
 		margin-bottom: 46px
-		color: rgba(0, 11, 38, 0.56)
+		color: rgba($label-color, 0.56)
 		line-height: 24px
 
 		@include _795
@@ -48,7 +48,7 @@
 		align-items: center
 		width: 48px
 
-		background: rgba(62, 80, 114, 0.08)
+		background: rgba($button-secondary-blue, 0.08)
 		border: 0
 		border-radius: 8px
 

@@ -1,4 +1,5 @@
 @import "src/app/styles/mixins.sass"
+@import "src/app/styles/varibles.sass"
 
 .history_card
 	max-width: 768px
@@ -6,7 +7,7 @@
 
 	padding: 32px
 
-	border: 1px solid rgba(62, 80, 114, 0.16)
+	border: 1px solid rgba($button-secondary-blue, 0.16)
 	box-sizing: border-box
 	border-radius: 20px
 
@@ -32,7 +33,7 @@
 label
 	font-size: 14px
 	line-height: 18px
-	color: rgba(0, 11, 38, 0.4)
+	color: rgba($label-color, 0.4)
 
 .materials_list
 
@@ -46,7 +47,7 @@ label
 		margin-right: 30px
 
 		&::marker
-			color: rgba(62, 80, 114, 0.24)
+			color: rgba($button-secondary-blue, 0.24)
 
 		&:first-child
 			list-style: none
