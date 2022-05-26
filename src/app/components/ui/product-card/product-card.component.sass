@@ -1,8 +1,12 @@
+@import "src/app/styles/mixins.sass"
+
 .product_card
 	&__wrapper
 		max-width: 274px
 		min-height: 371px
-		margin-bottom: 48px
+
+		@include _600
+			max-width: 343px
 
 	&__img_wrapper
 		position: relative
@@ -11,6 +15,9 @@
 		border-radius: 16px
 		& img
 			width: 274px
+
+			@include _600
+				width: 343px
 
 .product_card
 	&__brand
