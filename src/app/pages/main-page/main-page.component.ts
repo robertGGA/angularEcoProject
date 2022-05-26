@@ -7,13 +7,6 @@ import { ActivatedRoute } from '@angular/router';
 	styleUrls: ['./main-page.component.sass'],
 	changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class MainPageComponent implements OnInit {
+export class MainPageComponent {
 	first_image = './assets/images/market.svg'
-	constructor() {
-	}
-
-	ngOnInit(): void {
-	}
-
-
 }

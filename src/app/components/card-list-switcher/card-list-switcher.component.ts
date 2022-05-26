@@ -6,11 +6,6 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
   styleUrls: ['./card-list-switcher.component.sass'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class CardListSwitcherComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
+export class CardListSwitcherComponent {
 
 }
