@@ -54,15 +54,11 @@ export class RegFormComponent {
 	}
 
 	onSubmit() {
-		return () => {
-			console.log(this.formGroup.value);
-			this.authService.registration(this.formGroup.value).subscribe(res => {
-				console.log(res);
-				this.dialog.openLoginDialog();
-			}, err => {
-				console.log(err);
-			})
-		}
+		this.authService.registration(this.formGroup.value).subscribe(res => {
+			this.dialog.openLoginDialog();
+		}, err => {
+			console.log(err);
+		})
 	}
 
 }

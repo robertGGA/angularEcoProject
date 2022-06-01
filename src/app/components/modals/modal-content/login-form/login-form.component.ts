@@ -3,12 +3,12 @@ import {
 	ChangeDetectionStrategy,
 	ChangeDetectorRef
 } from '@angular/core';
-import { FormBuilder, FormGroup,  Validators } from '@angular/forms';
-import {  DialogRef } from '@angular/cdk-experimental/dialog';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { DialogRef } from '@angular/cdk-experimental/dialog';
 import { DialogService } from '@services/dialog.service';
 import { AuthService } from '@services/auth.service';
 
-import {  Router } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
 	selector: 'app-login-form',
@@ -20,6 +20,7 @@ export class LoginFormComponent {
 
 	formGroup: FormGroup;
 	loginDialogRef: DialogRef<any>
+	submitError = false;
 
 	constructor(
 		public dialog: DialogService,
@@ -53,19 +54,18 @@ export class LoginFormComponent {
 		return this.formGroup.get(name)!;
 	}
 
+
 	onSubmit() {
 		const login = this.formGroup.value.phone;
 		const password = this.formGroup.value.password;
-		return () => {
-			this.authService.authorize({login, password}).subscribe(res => {
-				console.log(res.token)
-				this.authService.token = res.token;
-				this.dialogRef.close();
-				this.route.navigate(['/profile']);
-			}, err => {
-				console.log(err);
-			})
-		}
+		this.authService.authorize({ login, password }).subscribe(res => {
+			console.log(res.token)
+			this.authService.token = res.token;
+			this.dialogRef.close();
+			this.route.navigate(['/profile']);
+		}, err => {
+
+		})
 	}
 
 }
