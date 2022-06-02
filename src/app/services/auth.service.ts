@@ -44,7 +44,6 @@ export class AuthService {
 		return this.token !== null;
 	}
 
-
 	saveToStorage(res: any): void {
 		this.token = res.access_token;
 	}

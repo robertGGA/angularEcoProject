@@ -9,6 +9,7 @@ import { DialogService } from '@services/dialog.service';
 import { AuthService } from '@services/auth.service';
 
 import { Router } from '@angular/router';
+import { BehaviorSubject } from 'rxjs';
 
 @Component({
 	selector: 'app-login-form',
@@ -20,7 +21,8 @@ export class LoginFormComponent {
 
 	formGroup: FormGroup;
 	loginDialogRef: DialogRef<any>
-	submitError = false;
+	submitError = new BehaviorSubject(false);
+	errorMessage = "";
 
 	constructor(
 		public dialog: DialogService,
@@ -28,7 +30,6 @@ export class LoginFormComponent {
 		private authService: AuthService,
 		private route: Router,
 		private dialogRef: DialogRef<LoginFormComponent>,
-		private readonly cdRef: ChangeDetectorRef
 	) {
 		this.formGroup = this.formBuilder.group({
 			phone: ['', [
@@ -36,6 +37,12 @@ export class LoginFormComponent {
 				Validators.maxLength(11)]],
 			password: ['', [Validators.required,
 				Validators.maxLength(16)]]
+		})
+		this.formGroup.get("phone")?.valueChanges.subscribe(()=>{
+			this.submitError.next(false);
+		})
+		this.formGroup.get("password")?.valueChanges.subscribe(()=>{
+			this.submitError.next(false);
 		})
 		this.loginDialogRef = dialogRef;
 	}
@@ -54,17 +61,16 @@ export class LoginFormComponent {
 		return this.formGroup.get(name)!;
 	}
 
-
 	onSubmit() {
 		const login = this.formGroup.value.phone;
 		const password = this.formGroup.value.password;
 		this.authService.authorize({ login, password }).subscribe(res => {
-			console.log(res.token)
 			this.authService.token = res.token;
 			this.dialogRef.close();
 			this.route.navigate(['/profile']);
 		}, err => {
-
+			this.errorMessage = err.error.message
+			this.submitError.next(true);
 		})
 	}
 

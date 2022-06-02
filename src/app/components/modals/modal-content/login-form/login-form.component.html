@@ -34,6 +34,9 @@
 			value='Вход'
 		></app-button>
 	</div>
+	<ng-container *ngIf='submitError|async'>
+		<app-form-error-message [validationMessage]=errorMessage></app-form-error-message>
+	</ng-container>
 	<div class='modal__underLinks'>
 		<button (click)='this.dialog.openCodeConfirmDialog()'>
 			Войти с помощью смс
