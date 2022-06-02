@@ -7,6 +7,7 @@ import { HistoryCardComponent } from '@components/cards/history-card/history-car
 import { MarketPageComponent } from '@pages/market-page/market-page.component';
 import { AuthGuard } from '@guards/auth-guard';
 import { MapPageComponent } from '@pages/map-page/map-page.component';
+import { AboutPageComponent } from '@pages/about-page/about-page.component';
 
 const profileRoutes: Routes = [
 	{ path: 'promocode', component: PromocodeCardComponent },
@@ -18,7 +19,8 @@ const routes: Routes = [
 	{ path: '', component: MainPageComponent },
 	{ path: 'profile', component: ProfilePageComponent, children: profileRoutes, canActivate: [AuthGuard] },
 	{ path: 'market', component: MarketPageComponent },
-	{ path: 'map', component: MapPageComponent}
+	{ path: 'map', component: MapPageComponent},
+	{ path: 'about', component: AboutPageComponent}
 ];
 
 @NgModule({

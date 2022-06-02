@@ -46,6 +46,8 @@ import { FilterModalContainerComponent } from '@components/filter-modal-containe
 import { MobileModalComponent } from '@components/modals/modal-containers/mobile-modal/mobile-modal.component';
 import { ModalMenuContentComponent } from '@components/modals/modal-content/modal-menu-content/modal-menu-content.component';
 import { FooterComponent } from '@components/footer/footer.component';
+import { AboutPageComponent } from '@pages/about-page/about-page.component';
+import { CardSkeletonComponent } from '@components/ui/loading/skeletons/card-skeleton/card-skeleton.component';
 
 
 @NgModule({
@@ -86,6 +88,8 @@ import { FooterComponent } from '@components/footer/footer.component';
 		MobileModalComponent,
 		ModalMenuContentComponent,
 		FooterComponent,
+		AboutPageComponent,
+		CardSkeletonComponent,
 	],
 	imports: [
 		SwiperModule,
