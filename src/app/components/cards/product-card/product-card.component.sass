@@ -1,10 +1,12 @@
-@import "src/app/styles/mixins.sass"
-@import "src/app/styles/varibles.sass"
+@import "../../../styles/mixins"
+@import "../../../styles/varibles"
 
 .product_card
 	&__wrapper
 		max-width: 274px
 		min-height: 371px
+		background: none
+		border: none
 
 		@include _600
 			max-width: 343px
@@ -19,8 +21,6 @@
 
 			@include _600
 				width: 343px
-
-.product_card
 	&__brand
 		margin: 0
 		padding: 6px 10px
@@ -36,10 +36,12 @@
 	&__name
 		margin-top: 16px
 		margin-bottom: 0
+		text-align: left
 	&__type
 		margin-top: 5px
 		font-weight: 500
 		color: rgba($label-color, 0.56)
+		text-align: left
 	&__cost
 		display: flex
 		align-items: center

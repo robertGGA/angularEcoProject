@@ -37,7 +37,7 @@ import { ErrorInterceptorService } from '@services/error-interceptor.service';
 import { UrlInterceptorService } from '@services/url-interceptor.service';
 import { AuthInterceptorService } from '@services/auth-interceptor.service';
 import { AuthGuard } from '@guards/auth-guard';
-import { ProductCardComponent } from '@components/ui/product-card/product-card.component';
+import { ProductCardComponent } from '@components/cards/product-card/product-card.component';
 import { FilterComponent } from '@components/filter/filter.component';
 import { SubFilterComponent } from '@components/sub-filter/sub-filter.component';
 import { FilterCheckboxComponent } from '@components/filter-checkbox/filter-checkbox.component';
@@ -48,10 +48,10 @@ import { ModalMenuContentComponent } from '@components/modals/modal-content/moda
 import { FooterComponent } from '@components/footer/footer.component';
 import { AboutPageComponent } from '@pages/about-page/about-page.component';
 import { CardSkeletonComponent } from '@components/ui/loading/skeletons/card-skeleton/card-skeleton.component';
-import { CenterCardComponent } from './components/ui/center-card/center-card.component';
-import { LeafletComponent, NglCoreModule } from 'angular-leaflet';
-import { SearchInputComponent } from './components/ui/search-input/search-input.component';
-import { DropdownComponent } from './components/ui/dropdown/dropdown.component';
+import { CenterCardComponent } from '@components/ui/center-card/center-card.component';
+import { SearchInputComponent } from '@components/ui/search-input/search-input.component';
+import { DropdownComponent } from '@components/ui/dropdown/dropdown.component';
+import { BacksideProductCardComponent } from './components/cards/backside-product-card/backside-product-card.component';
 
 
 @NgModule({
@@ -97,6 +97,7 @@ import { DropdownComponent } from './components/ui/dropdown/dropdown.component';
   		CenterCardComponent,
     SearchInputComponent,
     DropdownComponent,
+    BacksideProductCardComponent,
 	],
 	imports: [
 		SwiperModule,
@@ -109,6 +110,7 @@ import { DropdownComponent } from './components/ui/dropdown/dropdown.component';
 		BrowserAnimationsModule,
 		RouterModule,
 		HttpClientModule,
+
 	],
 	providers: [
 		{
