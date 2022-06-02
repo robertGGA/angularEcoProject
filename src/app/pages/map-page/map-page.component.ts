@@ -1,5 +1,6 @@
 import { Component, OnInit, ChangeDetectionStrategy, AfterViewInit } from '@angular/core';
 import * as L from 'leaflet';
+import { MapService } from '@services/map.service';
 
 @Component({
 	selector: 'app-map-page',
@@ -10,9 +11,8 @@ import * as L from 'leaflet';
 export class MapPageComponent implements AfterViewInit {
 	private map: L.Map | undefined;
 
-	constructor() {
+	constructor(public mapService: MapService) {
 	}
-
 
 	private initMap() {
 		this.map = L.map('map').setView([55.789190, 49.116084], 13);
@@ -23,6 +23,7 @@ export class MapPageComponent implements AfterViewInit {
 			tileSize: 512,
 			zoomOffset: -1,
 		}).addTo(this.map);
+
 	}
 
 	ngAfterViewInit(): void {

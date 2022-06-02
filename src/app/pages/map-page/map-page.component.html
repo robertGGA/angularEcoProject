@@ -1,3 +1,18 @@
 <div id='map'>
-
+	<div class='cards__wrapper'>
+		<div class='cards__form_wrapper'>
+			<app-search-input></app-search-input>
+			<div class='cards__form__dropdowns'>
+				<app-dropdown name='Выбрано 3 магазина'></app-dropdown>
+				<app-dropdown name='Материалы'></app-dropdown>
+			</div>
+		</div>
+		<ul class='cards__list'>
+			<li class='cards__element'
+			    *ngFor='let el of mapService.centers'>
+				<app-center-card [address]='el.address'
+				                 [materials]='el.materials'></app-center-card>
+			</li>
+		</ul>
+	</div>
 </div>

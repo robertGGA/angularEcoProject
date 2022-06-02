@@ -48,6 +48,10 @@ import { ModalMenuContentComponent } from '@components/modals/modal-content/moda
 import { FooterComponent } from '@components/footer/footer.component';
 import { AboutPageComponent } from '@pages/about-page/about-page.component';
 import { CardSkeletonComponent } from '@components/ui/loading/skeletons/card-skeleton/card-skeleton.component';
+import { CenterCardComponent } from './components/ui/center-card/center-card.component';
+import { LeafletComponent, NglCoreModule } from 'angular-leaflet';
+import { SearchInputComponent } from './components/ui/search-input/search-input.component';
+import { DropdownComponent } from './components/ui/dropdown/dropdown.component';
 
 
 @NgModule({
@@ -90,6 +94,9 @@ import { CardSkeletonComponent } from '@components/ui/loading/skeletons/card-ske
 		FooterComponent,
 		AboutPageComponent,
 		CardSkeletonComponent,
+  		CenterCardComponent,
+    SearchInputComponent,
+    DropdownComponent,
 	],
 	imports: [
 		SwiperModule,
@@ -101,7 +108,7 @@ import { CardSkeletonComponent } from '@components/ui/loading/skeletons/card-ske
 		DialogModule,
 		BrowserAnimationsModule,
 		RouterModule,
-		HttpClientModule
+		HttpClientModule,
 	],
 	providers: [
 		{

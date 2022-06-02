@@ -1,0 +1,49 @@
+@import "src/app/styles/varibles.sass"
+
+\:host
+	flex-basis: 50%
+
+.dropdown
+	&__wrapper
+		position: relative
+
+		color: black
+		background: white
+
+		height: 48px
+		max-width: 280px
+		width: 100%
+
+		padding: 14px 20px
+
+		box-shadow: 0 2px 8px rgba($balance_card-shadow-blue, 0.12)
+		border-radius: 8px
+
+	&__switcher
+		background: inherit
+		border: 0
+		width: 100%
+
+		display: flex
+		justify-content: space-between
+		align-items: center
+
+		&:hover
+			cursor: pointer
+
+	&__items__wrapper
+		position: absolute
+		top: 56px
+		left: 0
+
+		max-width: 315px
+		width: 100%
+
+		border-radius: 12px
+
+		background: white
+
+		padding: 11px 21px
+
+	&__items
+		list-style: none
