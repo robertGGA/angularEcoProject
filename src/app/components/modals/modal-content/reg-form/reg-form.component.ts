@@ -6,6 +6,7 @@ import { DialogService } from '@services/dialog.service';
 import { LoginFormComponent } from '@components/modals/modal-content/login-form/login-form.component';
 import { PartnersLoginFromComponent } from '@components/modals/modal-containers/partners-login-from/partners-login-from.component';
 import { AuthService } from '@services/auth.service';
+import { BehaviorSubject } from 'rxjs';
 
 @Component({
 	selector: 'app-reg-form',
@@ -16,6 +17,8 @@ import { AuthService } from '@services/auth.service';
 export class RegFormComponent {
 
 	formGroup: FormGroup;
+	submitError = new BehaviorSubject(false);
+	errorMessage = "";
 	@Output() closeModal: EventEmitter<any> = new EventEmitter<any>();
 
 	constructor(
@@ -58,7 +61,8 @@ export class RegFormComponent {
 			this.dialog.openLoginDialog();
 		}, err => {
 			console.log(err);
-		})
+			this.errorMessage = err.error.message
+			this.submitError.next(true);
+		});
 	}
-
 }
