@@ -46,6 +46,10 @@ import { FilterModalContainerComponent } from '@components/filter-modal-containe
 import { MobileModalComponent } from '@components/modals/modal-containers/mobile-modal/mobile-modal.component';
 import { ModalMenuContentComponent } from '@components/modals/modal-content/modal-menu-content/modal-menu-content.component';
 import { FooterComponent } from '@components/footer/footer.component';
+import { CenterCardComponent } from './components/ui/center-card/center-card.component';
+import { LeafletComponent, NglCoreModule } from 'angular-leaflet';
+import { SearchInputComponent } from './components/ui/search-input/search-input.component';
+import { DropdownComponent } from './components/ui/dropdown/dropdown.component';
 
 
 @NgModule({
@@ -86,6 +90,9 @@ import { FooterComponent } from '@components/footer/footer.component';
 		MobileModalComponent,
 		ModalMenuContentComponent,
 		FooterComponent,
+  		CenterCardComponent,
+    SearchInputComponent,
+    DropdownComponent,
 	],
 	imports: [
 		SwiperModule,
@@ -97,7 +104,7 @@ import { FooterComponent } from '@components/footer/footer.component';
 		DialogModule,
 		BrowserAnimationsModule,
 		RouterModule,
-		HttpClientModule
+		HttpClientModule,
 	],
 	providers: [
 		{

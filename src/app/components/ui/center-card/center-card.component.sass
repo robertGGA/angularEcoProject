@@ -1,0 +1,31 @@
+@import "src/app/styles/varibles.sass"
+.card
+	&__wrapper
+		background: white
+
+		height: 110px
+		max-width: 384px
+		padding: 16px
+
+		border: 1px solid rgba($button-secondary-blue, 0.12)
+		box-shadow: 0 4px 24px rgba($label-color, 0.12)
+		border-radius: 16px
+
+	&__content
+		display: flex
+		justify-content: space-between
+		align-items: center
+
+		&__img
+			max-width: 112px
+
+		&__description
+			font-size: 14px
+			max-width: 224px
+
+			&__address
+				font-weight: 500
+
+			&__materials
+				font-weight: 400
+				color: rgba($label-color, 0.48)

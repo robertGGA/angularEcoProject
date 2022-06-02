@@ -1,0 +1,23 @@
+<div class='dropdown__wrapper'>
+	<button class='dropdown__switcher' (click)='Switch()'>
+		{{name}}
+			<app-icon [width]='24' [height]='24' item='dropdown'></app-icon>
+	</button>
+	<div *ngIf='isSwitched' class='dropdown__items__wrapper'>
+		<ul class='dropdown__items'>
+			<li class='dropdown__item'>
+				<app-filter-checkbox name='Самарский трикотаж'></app-filter-checkbox>
+			</li>
+			<li class='dropdown__item'>
+				<app-filter-checkbox name='Самарский трикотаж'></app-filter-checkbox>
+			</li>
+			<li class='dropdown__item'>
+				<app-filter-checkbox name='Самарский трикотаж'></app-filter-checkbox>
+			</li>
+			<li class='dropdown__item'>
+				<app-filter-checkbox name='Самарский трикотаж'></app-filter-checkbox>
+			</li>
+		</ul>
+	</div>
+</div>
+
