@@ -1,4 +1,4 @@
-<button [@flipToBack]="'start'" (click)='onClick()'
+<button [@cardFlip]="state" (click)='onClick()'
         class='product_card__wrapper'>
 	<ng-container *ngIf='!isClickedWithout; else openedCard'>
 		<div class='product_card__img_wrapper'>
@@ -16,8 +16,7 @@
 		</div>
 	</ng-container>
 	<ng-template #openedCard>
-		<app-backside-product-card>
-
+		<app-backside-product-card class='front'>
 		</app-backside-product-card>
 	</ng-template>
 </button>

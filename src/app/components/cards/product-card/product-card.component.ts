@@ -8,16 +8,19 @@ import { animate, state, style, transition, trigger } from '@angular/animations'
 	styleUrls: ['./product-card.component.sass'],
 	changeDetection: ChangeDetectionStrategy.OnPush,
 	animations: [
-		trigger('flipToBack', [
-			state('start', style({
-				width: '100%',
-				height: '100%'
+		trigger('cardFlip', [
+			state('default', style({
+				transform: 'none'
 			})),
-			state('end', style({
-					width: '100%',
-					height: '100%'
-				})
-			), transition('start => end', animate(500))
+			state('flipped', style({
+				transform: 'rotateY(180deg)'
+			})),
+			transition('default => flipped', [
+				animate('400ms')
+			]),
+			transition('flipped => default', [
+				animate('200ms')
+			])
 		])
 	]
 })
@@ -28,15 +31,17 @@ export class ProductCardComponent {
 	@Input() productType: string = '';
 	@Input() cost: string = '';
 
-	//isClicked = new BehaviorSubject(false);
 	isClickedWithout = false;
+	state = 'default';
 
 	onClick() {
-		//this.isClicked.next(!this.isClicked.value);
+		if (this.state === 'default') {
+			this.state = 'flipped';
+		} else {
+			this.state = 'default';
+		}
 		this.isClickedWithout = !this.isClickedWithout;
-
-		console.log(this.isClickedWithout);
-
 	}
+
 
 }

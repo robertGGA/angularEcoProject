@@ -1,6 +1,12 @@
 @import "../../../styles/mixins"
 @import "../../../styles/varibles"
 
+.face
+	backface-visibility: hidden
+
+.front
+	transform: rotateY(180deg)
+
 .product_card
 	&__wrapper
 		max-width: 274px
@@ -10,6 +16,8 @@
 
 		@include _600
 			max-width: 343px
+
+
 
 	&__img_wrapper
 		position: relative
