@@ -22,7 +22,7 @@ export class LoginFormComponent {
 	formGroup: FormGroup;
 	loginDialogRef: DialogRef<any>
 	submitError = new BehaviorSubject(false);
-	errorMessage = "";
+	errorMessage = '';
 
 	constructor(
 		public dialog: DialogService,
@@ -38,10 +38,10 @@ export class LoginFormComponent {
 			password: ['', [Validators.required,
 				Validators.maxLength(16)]]
 		})
-		this.formGroup.get("phone")?.valueChanges.subscribe(()=>{
+		this.formGroup.get('phone')?.valueChanges.subscribe(() => {
 			this.submitError.next(false);
 		})
-		this.formGroup.get("password")?.valueChanges.subscribe(()=>{
+		this.formGroup.get('password')?.valueChanges.subscribe(() => {
 			this.submitError.next(false);
 		})
 		this.loginDialogRef = dialogRef;

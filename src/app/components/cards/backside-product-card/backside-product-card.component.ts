@@ -6,11 +6,6 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
   styleUrls: ['./backside-product-card.component.sass'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class BacksideProductCardComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
+export class BacksideProductCardComponent {
 
 }

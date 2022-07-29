@@ -12,7 +12,7 @@ import 'swiper/css/navigation'
 import 'swiper/css';
 import { LoginFormComponent } from '@components/modals/modal-content/login-form/login-form.component';
 import { RegFormComponent } from '@components/modals/modal-content/reg-form/reg-form.component'
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
 import { FormErrorMessageComponent } from '@components/ui/form-error-message/form-error-message.component';
 import { ButtonComponent } from '@components/ui/button/button.component';
 import { OverlayModule } from '@angular/cdk/overlay';
@@ -94,10 +94,10 @@ import { BacksideProductCardComponent } from './components/cards/backside-produc
 		FooterComponent,
 		AboutPageComponent,
 		CardSkeletonComponent,
-  		CenterCardComponent,
-    SearchInputComponent,
-    DropdownComponent,
-    BacksideProductCardComponent,
+		CenterCardComponent,
+		SearchInputComponent,
+		DropdownComponent,
+		BacksideProductCardComponent,
 	],
 	imports: [
 		SwiperModule,
@@ -109,7 +109,7 @@ import { BacksideProductCardComponent } from './components/cards/backside-produc
 		DialogModule,
 		BrowserAnimationsModule,
 		RouterModule,
-		HttpClientModule,
+		HttpClientModule
 
 	],
 	providers: [

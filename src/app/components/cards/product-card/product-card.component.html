@@ -1,23 +1,23 @@
-<button [@cardFlip]="state" (click)='onClick()'
+<button [@cardFlip]='state'
+        (click)='onClick()'
         class='product_card__wrapper'>
-	<ng-container *ngIf='!isClickedWithout; else openedCard'>
-		<div class='product_card__img_wrapper'>
-			<h5 class='product_card__brand'>{{brand}}</h5>
-			<img src='{{imgUrl}}'
-			     alt='preview' />
-		</div>
-		<h4 class='product_card__name'>{{productName}}</h4><h4
-		class='product_card__type'>{{productType}}</h4>
-		<div class='product_card__cost'>
-			<img class='product_card__cost__icon'
-			     src='/assets/images/img.png'
-			     alt='coin' />
-			{{cost}}
-		</div>
-	</ng-container>
-	<ng-template #openedCard>
-		<app-backside-product-card class='front'>
-		</app-backside-product-card>
-	</ng-template>
+	<div class='product_card__img_wrapper face'>
+		<h5 class='product_card__brand'>{{brand}}</h5>
+		<img src='{{imgUrl}}'
+		     alt='preview' />
+	</div>
+	<h4 class='product_card__name'>{{productName}}</h4><h4
+	class='product_card__type'>{{productType}}</h4>
+	<div class='product_card__cost'>
+		<img class='product_card__cost__icon'
+		     src='/assets/images/img.png'
+		     alt='coin' />
+		{{cost}}
+	</div>
+
+
+	<app-backside-product-card class='face front'>
+	</app-backside-product-card>
+
 </button>
 

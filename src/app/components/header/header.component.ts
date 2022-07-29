@@ -16,14 +16,13 @@ import { MobileModalComponent } from '@components/modals/modal-containers/mobile
 import { ModalMenuContentComponent } from '@components/modals/modal-content/modal-menu-content/modal-menu-content.component';
 
 
-
 @Component({
 	selector: 'Header',
 	templateUrl: './header.component.html',
 	styleUrls: ['./header.component.sass'],
 	changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class HeaderComponent implements OnInit{
+export class HeaderComponent implements OnInit {
 
 	@Input() auth$ = of(!this.auth.isAuthorized);
 	isAuth: boolean = false;
